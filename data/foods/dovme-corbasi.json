@@ -1,19 +1,24 @@
 {
   "id": "dovme-corbasi",
   "name": "Dövme Çorbası",
-  "aliases": ["dovme corbasi", "dövme çorba", "dövme", "dovme"],
+  "aliases": [
+    "dovme corbasi",
+    "dövme çorba",
+    "dövme",
+    "dovme"
+  ],
   "category": "corba",
-  "image": "images/foods/dovme-corbasi.jpg",
-  "portion_g": 250,
+  "image": "images/foods/dovme-corbasi.png",
+  "portion_g": 200,
   "nutrition": {
-    "kcal": 170,
-    "protein_g": 7,
-    "carb_g": 26,
-    "fat_g": 4,
-    "fiber_g": 3
+    "kcal": 136.0,
+    "protein_g": 5.6,
+    "carb_g": 20.8,
+    "fat_g": 3.2,
+    "fiber_g": 2.4
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
   "notes": "Dövme buğday (yarma) ile yapılır; yoğurtlu veya etli varyantları olabilir.",
-  "updated_at": "2026-05-16"
+  "updated_at": "2026-05-18"
 }

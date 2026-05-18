@@ -19,9 +19,9 @@ function trDate(iso) {
   return d.toLocaleString("tr-TR", { dateStyle: "long", timeStyle: "short" });
 }
 
-function renderComponent(c, food) {
+function renderComponent(c, food, foodIndex) {
   const div = document.createElement("article");
-  div.className = "component" + (food ? "" : " unknown");
+  div.className = "component" + (food ? "" : " unknown") + (food?.is_generic ? " generic" : "");
 
   const thumb = document.createElement("div");
   thumb.className = "thumb";
@@ -44,6 +44,11 @@ function renderComponent(c, food) {
     badge.className = "badge";
     badge.textContent = "yeni · görseli yok";
     h3.appendChild(badge);
+  } else if (food.is_generic) {
+    const badge = document.createElement("span");
+    badge.className = "badge generic-badge";
+    badge.textContent = "tür belirsiz";
+    h3.appendChild(badge);
   } else if (c.needs_review) {
     const badge = document.createElement("span");
     badge.className = "badge";
@@ -60,6 +65,21 @@ function renderComponent(c, food) {
     meta.textContent = `Bu bileşen henüz veritabanında yok`;
   }
   body.appendChild(meta);
+
+  // Generic ise: aynı kategorideki spesifik bileşenleri listele
+  if (food?.is_generic && foodIndex) {
+    const variants = foodIndex
+      .filter(e => e.category === food.category && !e.is_generic)
+      .map(e => e.name)
+      .filter(Boolean);
+    if (variants.length) {
+      const note = document.createElement("div");
+      note.className = "generic-note";
+      note.innerHTML = `<small>📋 Olası seçenekler: <strong>${variants.join(" · ")}</strong></small>
+        <small class="muted">Görsel ve değerler en sık çıkan örnek içindir, gerçek menü farklı olabilir.</small>`;
+      body.appendChild(note);
+    }
+  }
 
   const nut = document.createElement("div");
   nut.className = "nut";
@@ -86,6 +106,15 @@ async function loadFoodIndex(currentData) {
     }
   }));
   return map;
+}
+
+async function loadFullIndex() {
+  // _index.json — tüm bileşenlerin meta listesi (generic kartların "olası seçenekler"i için)
+  try {
+    return await loadJSON(`${DATA_BASE}/foods/_index.json`);
+  } catch (e) {
+    return [];
+  }
 }
 
 function computeTotals(components, foods) {
@@ -126,11 +155,14 @@ async function main() {
     return;
   }
 
-  const foods = await loadFoodIndex(current);
+  const [foods, fullIndex] = await Promise.all([
+    loadFoodIndex(current),
+    loadFullIndex(),
+  ]);
   root.innerHTML = "";
   for (const c of current.components) {
     const food = c.food_id ? foods[c.food_id] : null;
-    root.appendChild(renderComponent(c, food));
+    root.appendChild(renderComponent(c, food, fullIndex));
   }
 
   const totals = computeTotals(current.components, foods);

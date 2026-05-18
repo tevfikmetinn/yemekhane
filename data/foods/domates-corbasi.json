@@ -1,19 +1,24 @@
 {
   "id": "domates-corbasi",
   "name": "Domates Çorbası",
-  "aliases": ["domates corbasi", "domates çorba", "domatesli çorba", "kremalı domates çorbası"],
+  "aliases": [
+    "domates corbasi",
+    "domates çorba",
+    "domatesli çorba",
+    "kremalı domates çorbası"
+  ],
   "category": "corba",
-  "image": "images/foods/domates-corbasi.jpg",
-  "portion_g": 250,
+  "image": "images/foods/domates-corbasi.png",
+  "portion_g": 200,
   "nutrition": {
-    "kcal": 110,
-    "protein_g": 3,
-    "carb_g": 14,
-    "fat_g": 5,
-    "fiber_g": 2
+    "kcal": 88.0,
+    "protein_g": 2.4,
+    "carb_g": 11.2,
+    "fat_g": 4.0,
+    "fiber_g": 1.6
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
   "notes": "Genelde tereyağı + un + domates esaslı.",
-  "updated_at": "2026-05-16"
+  "updated_at": "2026-05-18"
 }

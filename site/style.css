@@ -138,7 +138,7 @@ main {
   color: var(--muted);
 }
 
-.component.unknown .badge {
+.component .badge {
   display: inline-block;
   background: #fff4e0;
   color: var(--warn);
@@ -146,7 +146,29 @@ main {
   border-radius: 999px;
   font-size: 0.75rem;
   margin-left: 6px;
+  vertical-align: middle;
 }
+
+.component .generic-badge {
+  background: #e7eef5;
+  color: #2c5282;
+}
+
+.component.generic {
+  background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+}
+
+.component .generic-note {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: #f5f3ee;
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.component .generic-note small { display: block; }
+.component .generic-note small.muted { color: var(--muted); margin-top: 2px; font-size: 0.78rem; }
 
 .totals {
   max-width: 880px;

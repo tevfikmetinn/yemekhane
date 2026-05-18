@@ -1,0 +1,24 @@
+{
+  "id": "uzum",
+  "name": "Üzüm",
+  "aliases": [
+    "uzum",
+    "üzüm",
+    "siyah üzüm",
+    "yeşil üzüm"
+  ],
+  "category": "meyve",
+  "image": "images/foods/uzum.png",
+  "portion_g": 130,
+  "nutrition": {
+    "kcal": 90,
+    "protein_g": 0.9,
+    "carb_g": 23,
+    "fat_g": 0.2,
+    "fiber_g": 1.2
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Bir avuç üzüm ~130g.",
+  "updated_at": "2026-05-18"
+}

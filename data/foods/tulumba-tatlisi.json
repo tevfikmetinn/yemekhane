@@ -1,9 +1,10 @@
 {
-  "id": "tatli",
-  "name": "Tatlı",
+  "id": "tulumba-tatlisi",
+  "name": "Tulumba Tatlısı",
   "aliases": [
-    "tatli",
-    "günün tatlısı"
+    "tulumba tatlisi",
+    "tulumba",
+    "tulumba tatlısı"
   ],
   "category": "tatli",
   "image": "images/foods/tulumba-tatlisi.png",
@@ -16,7 +17,7 @@
     "fiber_g": 1
   },
   "nutrition_source": "ai_estimate",
-  "is_generic": true,
-  "notes": "Tatlı türü menüde belirtilmediği için görsel ve değerler en sık çıkan tatlı olan tulumba içindir. Gerçek menüde farklı tatlı olabilir.",
+  "is_generic": false,
+  "notes": "Genelde 3-4 parça servis edilir, şurupta. Tatlı kategorisindeki en kalorili seçeneklerden.",
   "updated_at": "2026-05-18"
 }

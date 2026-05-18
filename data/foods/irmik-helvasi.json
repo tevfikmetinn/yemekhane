@@ -1,9 +1,14 @@
 {
   "id": "irmik-helvasi",
   "name": "İrmik Helvası",
-  "aliases": ["irmik helvasi", "irmik helva", "irmikli helva", "fıstıklı irmik helvası"],
-  "category": "tatli",
-  "image": "images/foods/irmik-helvasi.jpg",
+  "aliases": [
+    "irmik helvasi",
+    "irmik helva",
+    "irmikli helva",
+    "fıstıklı irmik helvası"
+  ],
+  "category": "helva",
+  "image": "images/foods/irmik-helvasi.png",
   "portion_g": 130,
   "nutrition": {
     "kcal": 340,

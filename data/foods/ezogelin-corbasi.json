@@ -1,19 +1,24 @@
 {
   "id": "ezogelin-corbasi",
   "name": "Ezogelin Çorbası",
-  "aliases": ["ezogelin corbasi", "ezogelin çorba", "ezo gelin çorbası", "ezogelin"],
+  "aliases": [
+    "ezogelin corbasi",
+    "ezogelin çorba",
+    "ezo gelin çorbası",
+    "ezogelin"
+  ],
   "category": "corba",
-  "image": "images/foods/ezogelin-corbasi.jpg",
-  "portion_g": 250,
+  "image": "images/foods/ezogelin-corbasi.png",
+  "portion_g": 200,
   "nutrition": {
-    "kcal": 165,
-    "protein_g": 8,
-    "carb_g": 26,
-    "fat_g": 3,
-    "fiber_g": 5
+    "kcal": 131.8,
+    "protein_g": 6.4,
+    "carb_g": 20.9,
+    "fat_g": 2.7,
+    "fiber_g": 3.6
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
   "notes": "Kırmızı mercimek + bulgur + nane karışımı. Mercimek çorbasından farklı.",
-  "updated_at": "2026-05-16"
+  "updated_at": "2026-05-18"
 }

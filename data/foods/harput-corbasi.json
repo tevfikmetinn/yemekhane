@@ -1,19 +1,23 @@
 {
   "id": "harput-corbasi",
   "name": "Harput Çorbası",
-  "aliases": ["harput corbasi", "harput çorba", "harput"],
+  "aliases": [
+    "harput corbasi",
+    "harput çorba",
+    "harput"
+  ],
   "category": "corba",
-  "image": "images/foods/harput-corbasi.jpg",
-  "portion_g": 250,
+  "image": "images/foods/harput-corbasi.png",
+  "portion_g": 200,
   "nutrition": {
-    "kcal": 200,
-    "protein_g": 11,
-    "carb_g": 22,
-    "fat_g": 7,
-    "fiber_g": 3
+    "kcal": 160.0,
+    "protein_g": 8.8,
+    "carb_g": 17.6,
+    "fat_g": 5.6,
+    "fiber_g": 2.4
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
   "notes": "Elazığ Harput yöresel çorbası — etli, bulgurlu, nohutlu. Diğer çorbalardan daha doyurucu.",
-  "updated_at": "2026-05-16"
+  "updated_at": "2026-05-18"
 }

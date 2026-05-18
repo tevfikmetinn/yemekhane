@@ -42,6 +42,18 @@
     "is_generic": false
   },
   {
+    "id": "elma",
+    "name": "Elma",
+    "category": "meyve",
+    "is_generic": false
+  },
+  {
+    "id": "etli-nohut",
+    "name": "Etli Nohut",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
     "id": "ezogelin-corbasi",
     "name": "Ezogelin Çorbası",
     "category": "corba",
@@ -68,7 +80,7 @@
   {
     "id": "irmik-helvasi",
     "name": "İrmik Helvası",
-    "category": "tatli",
+    "category": "helva",
     "is_generic": false
   },
   {
@@ -90,9 +102,9 @@
     "is_generic": true
   },
   {
-    "id": "nohut-yemegi",
-    "name": "Nohut Yemeği",
-    "category": "ana-yemek",
+    "id": "muz",
+    "name": "Muz",
+    "category": "meyve",
     "is_generic": false
   },
   {
@@ -114,6 +126,12 @@
     "is_generic": false
   },
   {
+    "id": "portakal",
+    "name": "Portakal",
+    "category": "meyve",
+    "is_generic": false
+  },
+  {
     "id": "sehriye-corbasi",
     "name": "Şehriye Çorbası",
     "category": "corba",
@@ -122,7 +140,7 @@
   {
     "id": "tahin-helvasi",
     "name": "Tahin Helvası",
-    "category": "tatli",
+    "category": "helva",
     "is_generic": false
   },
   {
@@ -141,6 +159,24 @@
     "id": "tavuk-suyu-corbasi",
     "name": "Tavuk Suyu Çorbası",
     "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "tulumba-tatlisi",
+    "name": "Tulumba Tatlısı",
+    "category": "tatli",
+    "is_generic": false
+  },
+  {
+    "id": "tursu",
+    "name": "Turşu",
+    "category": "salata",
+    "is_generic": false
+  },
+  {
+    "id": "uzum",
+    "name": "Üzüm",
+    "category": "meyve",
     "is_generic": false
   },
   {

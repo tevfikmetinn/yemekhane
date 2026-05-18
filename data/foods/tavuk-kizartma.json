@@ -1,9 +1,15 @@
 {
   "id": "tavuk-kizartma",
   "name": "Tavuk Kızartma",
-  "aliases": ["tavuk kizartma", "kızarmış tavuk", "tavuk kizartmasi", "tavuk kızartması", "kizarmis tavuk"],
+  "aliases": [
+    "tavuk kizartma",
+    "kızarmış tavuk",
+    "tavuk kizartmasi",
+    "tavuk kızartması",
+    "kizarmis tavuk"
+  ],
   "category": "ana-yemek",
-  "image": "images/foods/tavuk-kizartma.jpg",
+  "image": "images/foods/tavuk-kizartma.png",
   "portion_g": 180,
   "nutrition": {
     "kcal": 360,

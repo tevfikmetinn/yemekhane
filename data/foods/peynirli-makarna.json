@@ -1,9 +1,14 @@
 {
   "id": "peynirli-makarna",
   "name": "Peynirli Makarna",
-  "aliases": ["peynirli makarna", "kaşarlı makarna", "tereyağlı makarna", "makarna"],
+  "aliases": [
+    "peynirli makarna",
+    "kaşarlı makarna",
+    "tereyağlı makarna",
+    "makarna"
+  ],
   "category": "pilav",
-  "image": "images/foods/peynirli-makarna.jpg",
+  "image": "images/foods/peynirli-makarna.png",
   "portion_g": 200,
   "nutrition": {
     "kcal": 320,

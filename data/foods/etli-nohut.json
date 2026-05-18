@@ -1,0 +1,26 @@
+{
+  "id": "etli-nohut",
+  "name": "Etli Nohut",
+  "aliases": [
+    "etli nohut",
+    "etli-nohut",
+    "kuru nohut",
+    "nohut",
+    "nohut yemegi",
+    "nohut yemeği"
+  ],
+  "category": "ana-yemek",
+  "image": "images/foods/etli-nohut.png",
+  "portion_g": 220,
+  "nutrition": {
+    "kcal": 280,
+    "protein_g": 14,
+    "carb_g": 32,
+    "fat_g": 10,
+    "fiber_g": 7
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Etli sosta nohut. Menüde \"ETLİ NOHUT\" veya \"NOHUT YEMEĞİ\" olarak geçebilir.",
+  "updated_at": "2026-05-16"
+}

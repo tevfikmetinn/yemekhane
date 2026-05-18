@@ -1,19 +1,23 @@
 {
   "id": "ekmek",
   "name": "Ekmek",
-  "aliases": ["ekmek", "tam buğday ekmek", "beyaz ekmek"],
+  "aliases": [
+    "ekmek",
+    "tam buğday ekmek",
+    "beyaz ekmek"
+  ],
   "category": "ekmek",
-  "image": "images/foods/ekmek.jpg",
-  "portion_g": 100,
+  "image": "images/foods/ekmek.png",
+  "portion_g": 80,
   "nutrition": {
-    "kcal": 260,
-    "protein_g": 9,
-    "carb_g": 50,
+    "kcal": 210,
+    "protein_g": 7,
+    "carb_g": 40,
     "fat_g": 1,
-    "fiber_g": 3
+    "fiber_g": 2
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "Genelde 1-2 dilim verilir, değer 100g üzerinden",
+  "notes": "Genelde 2 dilim (~80g) verilir, değer tabldot porsiyonu için.",
   "updated_at": "2026-05-16"
 }

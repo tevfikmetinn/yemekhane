@@ -1,9 +1,14 @@
 {
   "id": "antep-tava",
   "name": "Antep Tava",
-  "aliases": ["antep tava", "antep tavası", "gaziantep tava", "etli antep tava"],
+  "aliases": [
+    "antep tava",
+    "antep tavası",
+    "gaziantep tava",
+    "etli antep tava"
+  ],
   "category": "ana-yemek",
-  "image": "images/foods/antep-tava.jpg",
+  "image": "images/foods/antep-tava.png",
   "portion_g": 220,
   "nutrition": {
     "kcal": 380,

@@ -1,9 +1,15 @@
 {
   "id": "firin-tavuk",
   "name": "Fırın Tavuk",
-  "aliases": ["firin tavuk", "fırında tavuk", "firinda tavuk", "fırın tavuğu", "tavuk firin"],
+  "aliases": [
+    "firin tavuk",
+    "fırında tavuk",
+    "firinda tavuk",
+    "fırın tavuğu",
+    "tavuk firin"
+  ],
   "category": "ana-yemek",
-  "image": "images/foods/firin-tavuk.jpg",
+  "image": "images/foods/firin-tavuk.png",
   "portion_g": 200,
   "nutrition": {
     "kcal": 350,

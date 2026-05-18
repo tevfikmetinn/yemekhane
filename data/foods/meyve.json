@@ -1,19 +1,23 @@
 {
   "id": "meyve",
   "name": "Meyve",
-  "aliases": ["meyve", "mevsim meyvesi", "günün meyvesi"],
+  "aliases": [
+    "meyve",
+    "mevsim meyvesi",
+    "günün meyvesi"
+  ],
   "category": "meyve",
-  "image": "images/foods/meyve.jpg",
-  "portion_g": 150,
+  "image": "images/foods/muz.png",
+  "portion_g": 120,
   "nutrition": {
-    "kcal": 80,
+    "kcal": 105,
     "protein_g": 1,
-    "carb_g": 20,
+    "carb_g": 27,
     "fat_g": 0,
     "fiber_g": 3
   },
   "nutrition_source": "ai_estimate",
   "is_generic": true,
-  "notes": "Genel kategori — gelen meyve elma, muz, armut, portakal vb. olabilir. Değerler ortalamadır.",
-  "updated_at": "2026-05-16"
+  "notes": "Meyve türü menüde belirtilmediği için görsel ve değerler muz içindir. Gerçek menüde elma, portakal, üzüm vb. olabilir.",
+  "updated_at": "2026-05-18"
 }

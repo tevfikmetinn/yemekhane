@@ -1,9 +1,16 @@
 {
   "id": "tahin-helvasi",
   "name": "Tahin Helvası",
-  "aliases": ["tahin helvasi", "tahin helva", "tahin h", "tahin.h", "tahinh", "tahin h."],
-  "category": "tatli",
-  "image": "images/foods/tahin-helvasi.jpg",
+  "aliases": [
+    "tahin helvasi",
+    "tahin helva",
+    "tahin h",
+    "tahin.h",
+    "tahinh",
+    "tahin h."
+  ],
+  "category": "helva",
+  "image": "images/foods/tahin-helvasi.png",
   "portion_g": 40,
   "nutrition": {
     "kcal": 220,

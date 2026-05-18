@@ -1,0 +1,21 @@
+{
+  "id": "elma",
+  "name": "Elma",
+  "aliases": [
+    "elma"
+  ],
+  "category": "meyve",
+  "image": "images/foods/elma.png",
+  "portion_g": 150,
+  "nutrition": {
+    "kcal": 78,
+    "protein_g": 0.4,
+    "carb_g": 21,
+    "fat_g": 0.3,
+    "fiber_g": 3.6
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Orta boy bir elma ~150g.",
+  "updated_at": "2026-05-18"
+}

@@ -1,9 +1,15 @@
 {
   "id": "patates-kizartmasi",
   "name": "Patates Kızartması",
-  "aliases": ["patates kizartmasi", "kızarmış patates", "patates kızartma", "kizartma patates", "patates"],
+  "aliases": [
+    "patates kizartmasi",
+    "kızarmış patates",
+    "patates kızartma",
+    "kizartma patates",
+    "patates"
+  ],
   "category": "diger",
-  "image": "images/foods/patates-kizartmasi.jpg",
+  "image": "images/foods/patates-kizartmasi.png",
   "portion_g": 120,
   "nutrition": {
     "kcal": 320,

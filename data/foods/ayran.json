@@ -1,9 +1,11 @@
 {
   "id": "ayran",
   "name": "Ayran",
-  "aliases": ["ayran"],
+  "aliases": [
+    "ayran"
+  ],
   "category": "icecek",
-  "image": "images/foods/ayran.jpg",
+  "image": "images/foods/ayran.png",
   "portion_g": 200,
   "nutrition": {
     "kcal": 70,

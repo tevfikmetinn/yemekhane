@@ -1,9 +1,15 @@
 {
   "id": "firin-kofte",
   "name": "Fırın Köfte",
-  "aliases": ["firin kofte", "fırın köftesi", "fırında köfte", "firinda kofte", "patatesli köfte"],
+  "aliases": [
+    "firin kofte",
+    "fırın köftesi",
+    "fırında köfte",
+    "firinda kofte",
+    "patatesli köfte"
+  ],
   "category": "ana-yemek",
-  "image": "images/foods/firin-kofte.jpg",
+  "image": "images/foods/firin-kofte.png",
   "portion_g": 200,
   "nutrition": {
     "kcal": 340,

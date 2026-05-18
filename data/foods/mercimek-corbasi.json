@@ -1,19 +1,24 @@
 {
   "id": "mercimek-corbasi",
   "name": "Mercimek Çorbası",
-  "aliases": ["mercimek corbasi", "kırmızı mercimek çorbası", "k.mercimek çorbası", "kirmizi mercimek"],
+  "aliases": [
+    "mercimek corbasi",
+    "kırmızı mercimek çorbası",
+    "k.mercimek çorbası",
+    "kirmizi mercimek"
+  ],
   "category": "corba",
-  "image": "images/foods/mercimek-corbasi.jpg",
-  "portion_g": 250,
+  "image": "images/foods/mercimek-corbasi.png",
+  "portion_g": 200,
   "nutrition": {
-    "kcal": 150,
-    "protein_g": 8,
-    "carb_g": 22,
-    "fat_g": 3,
-    "fiber_g": 5
+    "kcal": 120.0,
+    "protein_g": 6.4,
+    "carb_g": 17.6,
+    "fat_g": 2.4,
+    "fiber_g": 4.0
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
   "notes": "",
-  "updated_at": "2026-05-16"
+  "updated_at": "2026-05-18"
 }

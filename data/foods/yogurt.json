@@ -1,9 +1,13 @@
 {
   "id": "yogurt",
   "name": "Yoğurt",
-  "aliases": ["yogurt", "kase yoğurt", "süzme yoğurt"],
+  "aliases": [
+    "yogurt",
+    "kase yoğurt",
+    "süzme yoğurt"
+  ],
   "category": "salata",
-  "image": "images/foods/yogurt.jpg",
+  "image": "images/foods/yogurt.png",
   "portion_g": 150,
   "nutrition": {
     "kcal": 90,
