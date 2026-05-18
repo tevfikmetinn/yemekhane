@@ -19,6 +19,12 @@ function trDate(iso) {
   return d.toLocaleString("tr-TR", { dateStyle: "long", timeStyle: "short" });
 }
 
+function trTime(iso) {
+  if (!iso) return "–";
+  const d = new Date(iso);
+  return d.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" });
+}
+
 function renderComponent(c, food, foodIndex) {
   const div = document.createElement("article");
   div.className = "component" + (food ? "" : " unknown") + (food?.is_generic ? " generic" : "");
@@ -132,6 +138,24 @@ function computeTotals(components, foods) {
   return { ...t, counted };
 }
 
+function todayISO_TR() {
+  // TR yerel tarihini YYYY-MM-DD formatında al
+  const d = new Date();
+  // UTC+3 ofseti uygula
+  const tr = new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000);
+  return tr.toISOString().slice(0, 10);
+}
+
+function dayContext(menuDate) {
+  // Bugün vs menü tarihi farkı + hafta sonu kontrolü
+  const todayStr = todayISO_TR();
+  const today = new Date(todayStr);
+  const dow = today.getDay(); // 0=Pzr, 6=Cmt
+  const isWeekend = dow === 0 || dow === 6;
+  const isStale = menuDate && menuDate !== todayStr;
+  return { todayStr, isWeekend, isStale, dow };
+}
+
 async function main() {
   const root = document.getElementById("menu-root");
   const status = document.getElementById("status-line");
@@ -147,12 +171,47 @@ async function main() {
     return;
   }
 
-  status.textContent = current.date ? `Tarih: ${current.date}` : "—";
-  updatedAt.textContent = trDate(current.fetched_at);
+  const ctx = dayContext(current.date);
 
+  status.textContent = current.site_date || current.date || "—";
+
+  // Menü yayın bilgisi: "Menü yayınlandı: 09:23 · Son kontrol: 14:45"
+  const publishedLine = document.getElementById("published-line");
+  if (publishedLine) {
+    const pub = current.menu_published_at;
+    const check = current.fetched_at;
+    if (pub) {
+      const sameDay = pub.slice(0, 10) === (check || "").slice(0, 10);
+      publishedLine.innerHTML = sameDay
+        ? `Menü yayınlandı: <strong>${trTime(pub)}</strong> · Son kontrol: ${trTime(check)} · `
+        : `Menü tarihi: <strong>${trDate(pub)}</strong> · Son kontrol: ${trDate(check)} · `;
+    } else if (check) {
+      publishedLine.innerHTML = `Son güncelleme: <strong>${trDate(check)}</strong> · `;
+    }
+  }
+  if (updatedAt) updatedAt.textContent = trDate(current.fetched_at); // legacy fallback
+
+  // Veri yok / boş durum
   if (!current.components || current.components.length === 0) {
-    root.innerHTML = `<div class="empty">Bugün için menü görünmüyor.<br><small>Hafta sonu olabilir veya menü henüz yayınlanmamış olabilir.</small></div>`;
+    if (ctx.isWeekend) {
+      root.innerHTML = `<div class="empty">📅 Hafta sonu, yemekhane kapalı.<br><small>Pazartesi sabahı yeni menü gelir.</small></div>`;
+    } else {
+      root.innerHTML = `<div class="empty">Bugün için menü henüz yayınlanmadı.<br><small>Genelde 09:00 civarı yayınlanır, biraz sonra tekrar bak.</small></div>`;
+    }
     return;
+  }
+
+  // Veri var ama tarih bugünle eşleşmiyor (eski menü)
+  if (ctx.isStale) {
+    let msg;
+    if (ctx.isWeekend) {
+      msg = `📅 Hafta sonu — yemekhane kapalı.<br><small>Aşağıda son hafta içi menüsü görünüyor (<strong>${current.site_date || current.date}</strong>). Pazartesi sabahı yeni menü gelir.</small>`;
+    } else {
+      msg = `⏳ Bugünün menüsü henüz yayınlanmadı.<br><small>Aşağıda son güncel menü (<strong>${current.site_date || current.date}</strong>). Genelde 09:00 civarı güncellenir.</small>`;
+    }
+    root.innerHTML = `<div class="stale-banner">${msg}</div>`;
+  } else {
+    root.innerHTML = "";
   }
 
   const [foods, fullIndex] = await Promise.all([

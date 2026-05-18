@@ -192,7 +192,7 @@ def scrape(html: str | None = None) -> dict:
 
 
 def save(result: dict) -> bool:
-    """Sonucu data/ altına yaz. Hiçbir bileşen yoksa eski dosyalar korunur.
+    """Sonucu data/ altına yaz. Menü değişmemişse dosyaya hiç dokunma (gereksiz commit engelleme).
     Geri dönüş: yazıldı mı (True/False).
     """
     # Bileşen index'i her durumda güncel kalsın (admin paneli kullanır)
@@ -202,12 +202,37 @@ def save(result: dict) -> bool:
         print(f"[scrape] status={result['status']}, mevcut dosyalar korunuyor")
         return False
 
+    # Eski current.json ile karşılaştır: menü değişti mi?
+    menu_changed = True
+    old_published_at = None
+    if CURRENT_FILE.exists():
+        try:
+            old = json.loads(CURRENT_FILE.read_text(encoding="utf-8"))
+            old_items = sorted(c.get("raw", "") for c in old.get("components", []))
+            new_items = sorted(c.get("raw", "") for c in result.get("components", []))
+            if old_items == new_items and old.get("date") == result.get("date"):
+                menu_changed = False
+                old_published_at = old.get("menu_published_at")
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    if not menu_changed:
+        # Menü aynı, dosyaya dokunma → workflow commit atmaz → Vercel boşa deploy etmez
+        print(f"[scrape] menü aynı ({result.get('date')}, {len(result['components'])} bileşen), dosya güncellenmedi")
+        return False
+
+    # Menü değişti — menu_published_at şu anki zamana set edilir
+    result["menu_published_at"] = result["fetched_at"]
+
     MENUS_DIR.mkdir(parents=True, exist_ok=True)
     date = result["date"]
     menu_file = MENUS_DIR / f"{date}.json"
     menu_file.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     CURRENT_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[scrape] yazıldı: {menu_file.name}, {len(result['components'])} bileşen, {result['unknown_count']} bilinmeyen")
+    if old_published_at:
+        print(f"[scrape] MENÜ DEĞİŞTİ! yazıldı: {menu_file.name}, {len(result['components'])} bileşen")
+    else:
+        print(f"[scrape] yeni menü yazıldı: {menu_file.name}, {len(result['components'])} bileşen, {result['unknown_count']} bilinmeyen")
 
     if result["unknowns"]:
         existing = []
