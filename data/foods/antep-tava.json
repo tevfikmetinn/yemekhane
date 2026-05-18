@@ -1,0 +1,19 @@
+{
+  "id": "antep-tava",
+  "name": "Antep Tava",
+  "aliases": ["antep tava", "antep tavası", "gaziantep tava", "etli antep tava"],
+  "category": "ana-yemek",
+  "image": "images/foods/antep-tava.jpg",
+  "portion_g": 220,
+  "nutrition": {
+    "kcal": 380,
+    "protein_g": 22,
+    "carb_g": 18,
+    "fat_g": 24,
+    "fiber_g": 4
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Gaziantep yöresel; kıyma + patlıcan + biber + domates karışımı, fırınlanır.",
+  "updated_at": "2026-05-18"
+}

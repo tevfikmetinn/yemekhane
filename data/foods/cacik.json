@@ -1,0 +1,19 @@
+{
+  "id": "cacik",
+  "name": "Cacık",
+  "aliases": ["cacik", "salatalıklı cacık", "yoğurtlu cacık", "haydari"],
+  "category": "salata",
+  "image": "images/foods/cacik.jpg",
+  "portion_g": 180,
+  "nutrition": {
+    "kcal": 95,
+    "protein_g": 5,
+    "carb_g": 8,
+    "fat_g": 4,
+    "fiber_g": 1
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Yoğurt + salatalık + sarımsak; sulu kıvamlı. Yoğurttan ayrı bileşen.",
+  "updated_at": "2026-05-18"
+}

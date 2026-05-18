@@ -1,0 +1,227 @@
+:root {
+  --bg: #faf7f2;
+  --card: #ffffff;
+  --ink: #2a2018;
+  --muted: #7a6f63;
+  --accent: #8a1538;
+  --accent-soft: #fce8ee;
+  --border: #e8e2d8;
+  --warn: #b8650a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.topbar {
+  background: linear-gradient(135deg, var(--accent), #6d0f2a);
+  color: white;
+  padding: 28px 20px 24px;
+  text-align: center;
+}
+
+.topbar h1 {
+  margin: 0 0 6px;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: 0.2px;
+}
+
+.sub {
+  margin: 0;
+  opacity: 0.88;
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 880px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.loading, .empty {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.component {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 96px 1fr auto;
+  gap: 14px;
+  padding: 12px;
+  align-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+/* Resmî siteye benzer kısa bordo çizgi — üst ve alt orta */
+.component::before,
+.component::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+.component::before { top: -1px; }
+.component::after  { bottom: -1px; }
+
+.component:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(138, 21, 56, 0.08);
+}
+
+.component .thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: 10px;
+  background: var(--accent-soft) center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 0.85rem;
+  overflow: hidden;
+}
+
+.component .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.component .body h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.component .body .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.component .nut {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-width: 90px;
+}
+
+.component .nut .big {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.component.unknown .thumb {
+  background: #f0ece5;
+  color: var(--muted);
+}
+
+.component.unknown .badge {
+  display: inline-block;
+  background: #fff4e0;
+  color: var(--warn);
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+
+.totals {
+  max-width: 880px;
+  margin: 8px auto 32px;
+  padding: 18px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.totals h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.totals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+
+.totals-grid > div {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 14px 4px;
+}
+
+.totals-grid .big {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.totals-grid small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+footer {
+  max-width: 880px;
+  margin: 20px auto 60px;
+  padding: 0 16px;
+}
+
+.disclaimer {
+  background: #fffaf0;
+  border: 1px solid #f1e2c2;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  color: #5a4a30;
+  line-height: 1.55;
+}
+
+.meta {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 14px;
+}
+
+a { color: var(--accent); }
+
+@media (max-width: 540px) {
+  .component {
+    grid-template-columns: 72px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .component .thumb { width: 72px; height: 72px; }
+  .component .nut { grid-column: 1 / -1; text-align: left; }
+  .totals-grid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ayran",
+  "name": "Ayran",
+  "aliases": ["ayran"],
+  "category": "icecek",
+  "image": "images/foods/ayran.jpg",
+  "portion_g": 200,
+  "nutrition": {
+    "kcal": 70,
+    "protein_g": 4,
+    "carb_g": 5,
+    "fat_g": 3,
+    "fiber_g": 0
+  },
+  "nutrition_source": "package",
+  "is_generic": false,
+  "notes": "Paketli içecek",
+  "updated_at": "2026-05-16"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "yogurt",
+  "name": "Yoğurt",
+  "aliases": ["yogurt", "kase yoğurt", "süzme yoğurt"],
+  "category": "salata",
+  "image": "images/foods/yogurt.jpg",
+  "portion_g": 150,
+  "nutrition": {
+    "kcal": 90,
+    "protein_g": 6,
+    "carb_g": 7,
+    "fat_g": 4,
+    "fiber_g": 0
+  },
+  "nutrition_source": "package",
+  "is_generic": false,
+  "notes": "Paketli — değerler ortalama tabldot porsiyonuna göre",
+  "updated_at": "2026-05-16"
+}

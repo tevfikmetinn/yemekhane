@@ -1,0 +1,19 @@
+{
+  "id": "tatli",
+  "name": "Tatlı",
+  "aliases": ["tatli", "günün tatlısı"],
+  "category": "tatli",
+  "image": "images/foods/tatli.jpg",
+  "portion_g": 120,
+  "nutrition": {
+    "kcal": 320,
+    "protein_g": 4,
+    "carb_g": 55,
+    "fat_g": 10,
+    "fiber_g": 1
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": true,
+  "notes": "Genel kategori — genelde tulumba, revani, sütlaç vb. Değerler ortalamadır.",
+  "updated_at": "2026-05-16"
+}

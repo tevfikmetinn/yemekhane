@@ -1,0 +1,19 @@
+{
+  "id": "yayla-corbasi",
+  "name": "Yayla Çorbası",
+  "aliases": ["yayla corbasi", "yoğurtlu yayla çorbası", "yogurtlu corba"],
+  "category": "corba",
+  "image": "images/foods/yayla-corbasi.jpg",
+  "portion_g": 250,
+  "nutrition": {
+    "kcal": 130,
+    "protein_g": 5,
+    "carb_g": 14,
+    "fat_g": 6,
+    "fiber_g": 1
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "",
+  "updated_at": "2026-05-16"
+}

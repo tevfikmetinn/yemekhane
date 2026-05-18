@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Yemekhane</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+  <header class="topbar">
+    <h1>Admin Paneli</h1>
+    <p class="sub">Yeni bileşen ekle · mevcudu düzenle · fotoğraf yerleştir</p>
+  </header>
+
+  <main class="admin-grid">
+
+    <!-- Sol: durum + bilinmeyen listesi -->
+    <aside class="panel-side">
+      <section class="card-block">
+        <h2>Bugünün durumu</h2>
+        <div id="today-summary">Yükleniyor…</div>
+      </section>
+
+      <section class="card-block" id="unknowns-block" hidden>
+        <h2>İnceleme bekleyen <span class="pill" id="unknowns-count">0</span></h2>
+        <p class="muted">Aşağıdaki bileşenler bugünün menüsünde gözüktü ama kütüphanede eşleşmedi veya zayıf eşleşti. Tıkla, form bunlarla doldurulsun.</p>
+        <ul id="unknowns-list"></ul>
+      </section>
+
+      <section class="card-block">
+        <h2>Mevcut bileşen düzenle</h2>
+        <input type="text" id="search-existing" placeholder="ara (örn. pirinç pilavı)…">
+        <ul id="existing-list" class="scroll"></ul>
+      </section>
+    </aside>
+
+    <!-- Sağ: form -->
+    <section class="panel-form">
+      <h2 id="form-title">Yeni bileşen</h2>
+
+      <form id="food-form">
+        <div class="row">
+          <label>
+            <span>id <small>(dosya adı, küçük harf-tire)</small></span>
+            <input type="text" name="id" pattern="[a-z0-9\-]+" required placeholder="ornek: izmir-koftesi">
+          </label>
+          <label>
+            <span>Görünen isim</span>
+            <input type="text" name="name" required placeholder="İzmir Köftesi">
+          </label>
+        </div>
+
+        <label>
+          <span>Alias'lar <small>(virgülle ayır — yazım varyantları)</small></span>
+          <input type="text" name="aliases" placeholder="izmir koftesi, izmir kofte, izmir köfte">
+        </label>
+
+        <div class="row">
+          <label>
+            <span>Kategori</span>
+            <select name="category">
+              <option value="ana-yemek">ana-yemek</option>
+              <option value="pilav">pilav / makarna</option>
+              <option value="corba">çorba</option>
+              <option value="salata">salata / kase</option>
+              <option value="tatli">tatlı</option>
+              <option value="icecek">içecek</option>
+              <option value="meyve">meyve</option>
+              <option value="ekmek">ekmek</option>
+              <option value="diger">diğer</option>
+            </select>
+          </label>
+          <label>
+            <span>Porsiyon (gr)</span>
+            <input type="number" name="portion_g" value="200" min="0">
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Besin değerleri (porsiyon başına, tahmini)</legend>
+          <div class="row row-4">
+            <label><span>kcal</span><input type="number" name="kcal" step="0.1" value="0"></label>
+            <label><span>protein (g)</span><input type="number" name="protein_g" step="0.1" value="0"></label>
+            <label><span>karb. (g)</span><input type="number" name="carb_g" step="0.1" value="0"></label>
+            <label><span>yağ (g)</span><input type="number" name="fat_g" step="0.1" value="0"></label>
+          </div>
+          <label class="row-1">
+            <span>lif (g)</span><input type="number" name="fiber_g" step="0.1" value="0">
+          </label>
+          <label>
+            <span>Kaynak</span>
+            <select name="nutrition_source">
+              <option value="ai_estimate">AI tahmini (ortalama)</option>
+              <option value="package">Paket etiketi (ayran, helva vb.)</option>
+              <option value="manual">Manuel hesap</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <label>
+          <span>Notlar <small>(opsiyonel)</small></span>
+          <textarea name="notes" rows="2" placeholder="örn. Yöresel; genelde patatesle servis edilir"></textarea>
+        </label>
+
+        <label class="checkbox-line">
+          <input type="checkbox" name="is_generic">
+          <span>Generic kategori <small>(örn. "meyve", "tatlı" gibi tek isim altında çeşitli ürünler)</small></span>
+        </label>
+
+        <fieldset>
+          <legend>Fotoğraf</legend>
+          <input type="file" id="photo-input" accept="image/*">
+          <div id="photo-preview" class="photo-preview muted">Fotoğraf seçilmedi</div>
+          <p class="muted small">Otomatik <code>images/foods/&lt;id&gt;.jpg</code> olarak indirilir.</p>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" id="btn-download-json" class="primary">💾 JSON indir</button>
+          <button type="button" id="btn-download-photo" disabled>📷 Fotoğrafı indir</button>
+          <button type="reset" class="ghost">Temizle</button>
+        </div>
+
+        <div id="form-status" class="muted small"></div>
+      </form>
+
+      <details class="help">
+        <summary>Bu indirilenleri nereye koyacağım?</summary>
+        <ol>
+          <li><strong>JSON</strong>: <code>data/foods/&lt;id&gt;.json</code> olarak kaydet (örn. <code>data/foods/izmir-koftesi.json</code>).</li>
+          <li><strong>Fotoğraf</strong>: <code>images/foods/&lt;id&gt;.jpg</code> olarak kaydet.</li>
+          <li>Terminalde: <code>git add data/ images/ &amp;&amp; git commit -m "yeni bileşen: ..." &amp;&amp; git push</code></li>
+          <li>~1-2 dk sonra canlı sitede görünür.</li>
+        </ol>
+      </details>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "id": "sehriye-corbasi",
+  "name": "Şehriye Çorbası",
+  "aliases": ["sehriye corbasi", "şehriye çorba", "sehriye", "tel şehriye çorbası"],
+  "category": "corba",
+  "image": "images/foods/sehriye-corbasi.jpg",
+  "portion_g": 250,
+  "nutrition": {
+    "kcal": 100,
+    "protein_g": 4,
+    "carb_g": 18,
+    "fat_g": 2,
+    "fiber_g": 1
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Tavuk veya et suyunda şehriye; hafif çorbalardan.",
+  "updated_at": "2026-05-16"
+}

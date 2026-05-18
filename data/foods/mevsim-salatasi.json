@@ -1,0 +1,19 @@
+{
+  "id": "mevsim-salatasi",
+  "name": "Mevsim Salatası",
+  "aliases": ["mevsim salatasi", "salata", "yeşil salata", "karışık salata"],
+  "category": "salata",
+  "image": "images/foods/mevsim-salatasi.jpg",
+  "portion_g": 120,
+  "nutrition": {
+    "kcal": 60,
+    "protein_g": 2,
+    "carb_g": 8,
+    "fat_g": 2,
+    "fiber_g": 3
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "",
+  "updated_at": "2026-05-16"
+}

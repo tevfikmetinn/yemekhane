@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "mkdir -p _site && cp -r site/* _site/ && cp -r data _site/data && cp -r images _site/images && for f in _site/*.js; do sed -i 's|\\.\\./data|./data|g; s|\\.\\./images|./images|g' \"$f\"; done",
+  "outputDirectory": "_site",
+  "cleanUrls": true,
+  "trailingSlash": false
+}

@@ -1,0 +1,40 @@
+name: Keepalive
+
+# Yaz tatili / okul kapalı dönemlerinde 60-günlük "inactive" kuralı yüzünden
+# GitHub Actions cron'larının otomatik kapanmasını engeller. Haftada bir kez
+# heartbeat dosyasını günceller; bu yeterli aktivite sayılır.
+
+on:
+  schedule:
+    - cron: "13 7 * * 1"   # her Pazartesi UTC 07:13 (TR 10:13)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: keepalive
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update heartbeat
+        run: |
+          mkdir -p data
+          date -u +'%Y-%m-%dT%H:%M:%SZ' > data/heartbeat.txt
+
+      - name: Commit
+        run: |
+          git config user.name "yemekhane-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/heartbeat.txt
+          if git diff --cached --quiet; then
+            echo "Heartbeat değişmedi (?), commit atlanıyor."
+          else
+            git commit -m "keepalive heartbeat $(date -u +'%Y-%m-%d')"
+            git push
+          fi

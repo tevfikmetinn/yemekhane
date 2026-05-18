@@ -1,0 +1,49 @@
+name: Scrape menu
+
+on:
+  schedule:
+    # GitHub Actions cron UTC. Türkiye saati = UTC+3.
+    # GHA cron 5-15 dk gecikebilir → sabit saatler yerine sık polling. Scraper
+    # idempotent: içerik değişmemişse workflow commit atmaz, maliyet sıfır.
+    #
+    # Sabah (menü düşene kadar) + öğle başlangıcı (kilit recheck):
+    - cron: "*/15 5-9 * * 1-5"   # TR 08:00 – 12:59, her 15 dk
+    # İkinci öğün gözlemi:
+    - cron: "*/15 11-13 * * 1-5" # TR 14:00 – 16:59, her 15 dk
+  workflow_dispatch:           # manuel tetikleme (debug için)
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write           # değişiklik commit'leyebilsin
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r scraper/requirements.txt
+
+      - name: Run scraper
+        run: python scraper/scrape.py
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "yemekhane-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok, commit atlanıyor."
+          else
+            git commit -m "menü güncelleme $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

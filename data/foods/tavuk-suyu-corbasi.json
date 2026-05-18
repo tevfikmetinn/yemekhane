@@ -1,0 +1,19 @@
+{
+  "id": "tavuk-suyu-corbasi",
+  "name": "Tavuk Suyu Çorbası",
+  "aliases": ["tavuk suyu corbasi", "tavuk suyu çorba", "tavuklu çorba", "tavuk çorba", "tavuk corbasi"],
+  "category": "corba",
+  "image": "images/foods/tavuk-suyu-corbasi.jpg",
+  "portion_g": 250,
+  "nutrition": {
+    "kcal": 95,
+    "protein_g": 7,
+    "carb_g": 9,
+    "fat_g": 3,
+    "fiber_g": 1
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Tavuk suyu bazlı, genelde şehriye veya pirinçle birlikte.",
+  "updated_at": "2026-05-16"
+}

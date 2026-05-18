@@ -1,0 +1,19 @@
+{
+  "id": "pirinc-pilavi",
+  "name": "Pirinç Pilavı",
+  "aliases": ["pirinc pilavi", "sade pilav", "tereyağlı pirinç pilavı", "pilav"],
+  "category": "pilav",
+  "image": "images/foods/pirinc-pilavi.jpg",
+  "portion_g": 200,
+  "nutrition": {
+    "kcal": 260,
+    "protein_g": 5,
+    "carb_g": 50,
+    "fat_g": 4,
+    "fiber_g": 1
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "",
+  "updated_at": "2026-05-16"
+}

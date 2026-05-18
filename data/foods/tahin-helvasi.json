@@ -1,0 +1,19 @@
+{
+  "id": "tahin-helvasi",
+  "name": "Tahin Helvası",
+  "aliases": ["tahin helvasi", "tahin helva", "tahin h", "tahin.h", "tahinh", "tahin h."],
+  "category": "tatli",
+  "image": "images/foods/tahin-helvasi.jpg",
+  "portion_g": 40,
+  "nutrition": {
+    "kcal": 220,
+    "protein_g": 4,
+    "carb_g": 24,
+    "fat_g": 12,
+    "fiber_g": 1
+  },
+  "nutrition_source": "package",
+  "is_generic": false,
+  "notes": "Paketli, ~40g porsiyon. Menüde 'HELVA' veya 'TAHİN.H' gibi kısaltmalarla geçebilir.",
+  "updated_at": "2026-05-16"
+}

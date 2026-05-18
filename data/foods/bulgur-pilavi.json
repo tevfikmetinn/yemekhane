@@ -1,0 +1,19 @@
+{
+  "id": "bulgur-pilavi",
+  "name": "Bulgur Pilavı",
+  "aliases": ["bulgur pilavi", "domatesli bulgur pilavı", "sade bulgur pilavı", "bulgur"],
+  "category": "pilav",
+  "image": "images/foods/bulgur-pilavi.jpg",
+  "portion_g": 200,
+  "nutrition": {
+    "kcal": 220,
+    "protein_g": 6,
+    "carb_g": 42,
+    "fat_g": 3,
+    "fiber_g": 4
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "",
+  "updated_at": "2026-05-16"
+}

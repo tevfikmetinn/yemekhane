@@ -1,0 +1,19 @@
+{
+  "id": "meyve",
+  "name": "Meyve",
+  "aliases": ["meyve", "mevsim meyvesi", "günün meyvesi"],
+  "category": "meyve",
+  "image": "images/foods/meyve.jpg",
+  "portion_g": 150,
+  "nutrition": {
+    "kcal": 80,
+    "protein_g": 1,
+    "carb_g": 20,
+    "fat_g": 0,
+    "fiber_g": 3
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": true,
+  "notes": "Genel kategori — gelen meyve elma, muz, armut, portakal vb. olabilir. Değerler ortalamadır.",
+  "updated_at": "2026-05-16"
+}

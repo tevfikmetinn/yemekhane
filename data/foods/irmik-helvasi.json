@@ -1,0 +1,19 @@
+{
+  "id": "irmik-helvasi",
+  "name": "İrmik Helvası",
+  "aliases": ["irmik helvasi", "irmik helva", "irmikli helva", "fıstıklı irmik helvası"],
+  "category": "tatli",
+  "image": "images/foods/irmik-helvasi.jpg",
+  "portion_g": 130,
+  "nutrition": {
+    "kcal": 340,
+    "protein_g": 4,
+    "carb_g": 52,
+    "fat_g": 13,
+    "fiber_g": 1
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "İrmik + tereyağı + şurup. Tahin helvasından (paket atıştırmalık) ayrı: yemekhane sıcak tatlısı.",
+  "updated_at": "2026-05-18"
+}

@@ -1,0 +1,158 @@
+[
+  {
+    "id": "antep-tava",
+    "name": "Antep Tava",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
+    "id": "ayran",
+    "name": "Ayran",
+    "category": "icecek",
+    "is_generic": false
+  },
+  {
+    "id": "bulgur-pilavi",
+    "name": "Bulgur Pilavı",
+    "category": "pilav",
+    "is_generic": false
+  },
+  {
+    "id": "cacik",
+    "name": "Cacık",
+    "category": "salata",
+    "is_generic": false
+  },
+  {
+    "id": "domates-corbasi",
+    "name": "Domates Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "dovme-corbasi",
+    "name": "Dövme Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "ekmek",
+    "name": "Ekmek",
+    "category": "ekmek",
+    "is_generic": false
+  },
+  {
+    "id": "ezogelin-corbasi",
+    "name": "Ezogelin Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "firin-kofte",
+    "name": "Fırın Köfte",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
+    "id": "firin-tavuk",
+    "name": "Fırın Tavuk",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
+    "id": "harput-corbasi",
+    "name": "Harput Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "irmik-helvasi",
+    "name": "İrmik Helvası",
+    "category": "tatli",
+    "is_generic": false
+  },
+  {
+    "id": "mercimek-corbasi",
+    "name": "Mercimek Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "mevsim-salatasi",
+    "name": "Mevsim Salatası",
+    "category": "salata",
+    "is_generic": false
+  },
+  {
+    "id": "meyve",
+    "name": "Meyve",
+    "category": "meyve",
+    "is_generic": true
+  },
+  {
+    "id": "nohut-yemegi",
+    "name": "Nohut Yemeği",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
+    "id": "patates-kizartmasi",
+    "name": "Patates Kızartması",
+    "category": "diger",
+    "is_generic": false
+  },
+  {
+    "id": "peynirli-makarna",
+    "name": "Peynirli Makarna",
+    "category": "pilav",
+    "is_generic": false
+  },
+  {
+    "id": "pirinc-pilavi",
+    "name": "Pirinç Pilavı",
+    "category": "pilav",
+    "is_generic": false
+  },
+  {
+    "id": "sehriye-corbasi",
+    "name": "Şehriye Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "tahin-helvasi",
+    "name": "Tahin Helvası",
+    "category": "tatli",
+    "is_generic": false
+  },
+  {
+    "id": "tatli",
+    "name": "Tatlı",
+    "category": "tatli",
+    "is_generic": true
+  },
+  {
+    "id": "tavuk-kizartma",
+    "name": "Tavuk Kızartma",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
+    "id": "tavuk-suyu-corbasi",
+    "name": "Tavuk Suyu Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "yayla-corbasi",
+    "name": "Yayla Çorbası",
+    "category": "corba",
+    "is_generic": false
+  },
+  {
+    "id": "yogurt",
+    "name": "Yoğurt",
+    "category": "salata",
+    "is_generic": false
+  }
+]

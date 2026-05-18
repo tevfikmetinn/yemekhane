@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yemekhane — Fırat Üni. Üniversite Evi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Günün Menüsü</h1>
+    <p class="sub" id="status-line">Yükleniyor…</p>
+  </header>
+
+  <main id="menu-root">
+    <div class="loading">Menü yükleniyor…</div>
+  </main>
+
+  <section class="totals" id="totals" hidden>
+    <h2>Ortalama Toplam (tahmini)</h2>
+    <div class="totals-grid">
+      <div><span class="big" id="t-kcal">–</span><small>kcal</small></div>
+      <div><span class="big" id="t-protein">–</span><small>protein (g)</small></div>
+      <div><span class="big" id="t-carb">–</span><small>karbonhidrat (g)</small></div>
+      <div><span class="big" id="t-fat">–</span><small>yağ (g)</small></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Uyarı:</strong> Bu site Fırat Üniversitesi'nin <strong>resmi sitesi değildir</strong>.
+      Menü verisi <a href="https://unievi.firat.edu.tr/" target="_blank" rel="noopener">unievi.firat.edu.tr</a>
+      adresinden otomatik olarak çekilmektedir. Besin değerleri ve fotoğraflar <strong>tahminidir</strong>;
+      yapay zeka destekli ortalama değerlerdir. Hiçbir resmiyet, garanti veya sağlık önerisi içermez.
+    </div>
+    <div class="meta">
+      Son güncelleme: <span id="updated-at">–</span> · Kaynak: <a href="https://unievi.firat.edu.tr/" target="_blank" rel="noopener">unievi.firat.edu.tr</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
