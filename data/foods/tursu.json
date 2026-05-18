@@ -11,14 +11,14 @@
   "image": "images/foods/tursu.png",
   "portion_g": 100,
   "nutrition": {
-    "kcal": 12,
-    "protein_g": 0.7,
-    "carb_g": 2.3,
-    "fat_g": 0.1,
-    "fiber_g": 1.5
+    "kcal": 15,
+    "protein_g": 1,
+    "carb_g": 3,
+    "fat_g": 0.2,
+    "fiber_g": 2
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "Karışık turşu — lahana, salatalık, havuç. Tuz oranı yüksek olabilir.",
-  "updated_at": "2026-05-18"
+  "notes": "Karışık turşu: lahana + salatalık + havuç + domates. Tuz yüksek.",
+  "updated_at": "2026-05-19"
 }

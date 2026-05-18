@@ -13,14 +13,14 @@
   "image": "images/foods/etli-nohut.png",
   "portion_g": 220,
   "nutrition": {
-    "kcal": 280,
-    "protein_g": 14,
-    "carb_g": 32,
-    "fat_g": 10,
-    "fiber_g": 7
+    "kcal": 320,
+    "protein_g": 16,
+    "carb_g": 38,
+    "fat_g": 11,
+    "fiber_g": 8
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "Etli sosta nohut. Menüde \"ETLİ NOHUT\" veya \"NOHUT YEMEĞİ\" olarak geçebilir.",
-  "updated_at": "2026-05-16"
+  "notes": "Bolca nohut + 4-6 küçük et parçası + kahverengi sos. Et oranı düşük (~%12), nohut yoğun. Görsele dayalı tahmin.",
+  "updated_at": "2026-05-19"
 }

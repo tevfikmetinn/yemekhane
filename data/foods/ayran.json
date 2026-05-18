@@ -16,6 +16,6 @@
   },
   "nutrition_source": "package",
   "is_generic": false,
-  "notes": "Paketli içecek",
-  "updated_at": "2026-05-16"
+  "notes": "Paketli 200ml standart ayran. Marka değişebilir, değerler ortalama.",
+  "updated_at": "2026-05-19"
 }

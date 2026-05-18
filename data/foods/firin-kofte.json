@@ -10,16 +10,16 @@
   ],
   "category": "ana-yemek",
   "image": "images/foods/firin-kofte.png",
-  "portion_g": 200,
+  "portion_g": 230,
   "nutrition": {
-    "kcal": 340,
+    "kcal": 420,
     "protein_g": 24,
-    "carb_g": 12,
-    "fat_g": 22,
-    "fiber_g": 1
+    "carb_g": 24,
+    "fat_g": 26,
+    "fiber_g": 2
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "Genellikle patates ile birlikte servis edilir; değerler köfte porsiyonu için.",
-  "updated_at": "2026-05-16"
+  "notes": "3 büyük köfte (~120g) + bolca patates kızartması (~80g). Değer ikisi birlikte. Patates ayrı bileşen olarak da var.",
+  "updated_at": "2026-05-19"
 }

@@ -11,14 +11,14 @@
   "image": "images/foods/peynirli-makarna.png",
   "portion_g": 200,
   "nutrition": {
-    "kcal": 320,
-    "protein_g": 10,
-    "carb_g": 48,
-    "fat_g": 10,
+    "kcal": 290,
+    "protein_g": 9,
+    "carb_g": 50,
+    "fat_g": 7,
     "fiber_g": 2
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "Makarna ana kategoride 'pilav' altında sayılır (yan grup). Peynir/kaşar ile.",
-  "updated_at": "2026-05-16"
+  "notes": "Boru makarna, sade görünüm — peynir/tereyağı az. Aşırı kremalı değil.",
+  "updated_at": "2026-05-19"
 }

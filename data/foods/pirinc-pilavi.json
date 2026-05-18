@@ -11,14 +11,14 @@
   "image": "images/foods/pirinc-pilavi.png",
   "portion_g": 200,
   "nutrition": {
-    "kcal": 260,
+    "kcal": 270,
     "protein_g": 5,
-    "carb_g": 50,
-    "fat_g": 4,
+    "carb_g": 52,
+    "fat_g": 5,
     "fiber_g": 1
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "",
-  "updated_at": "2026-05-16"
+  "notes": "Şehriyeli/tereyağlı pirinç pilavı. Tane tane, klasik kıvam.",
+  "updated_at": "2026-05-19"
 }

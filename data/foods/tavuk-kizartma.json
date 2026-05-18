@@ -10,16 +10,16 @@
   ],
   "category": "ana-yemek",
   "image": "images/foods/tavuk-kizartma.png",
-  "portion_g": 180,
+  "portion_g": 200,
   "nutrition": {
-    "kcal": 360,
-    "protein_g": 32,
-    "carb_g": 8,
-    "fat_g": 22,
-    "fiber_g": 0
+    "kcal": 340,
+    "protein_g": 28,
+    "carb_g": 10,
+    "fat_g": 20,
+    "fiber_g": 1
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "",
-  "updated_at": "2026-05-16"
+  "notes": "Kuşbaşı tavuk sote / kavurma kıvamı (görselde patates parçacıkları da var). Yağlı pişirme.",
+  "updated_at": "2026-05-19"
 }

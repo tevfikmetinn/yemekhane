@@ -10,14 +10,14 @@
   "image": "images/foods/yayla-corbasi.png",
   "portion_g": 200,
   "nutrition": {
-    "kcal": 104.0,
-    "protein_g": 4.0,
-    "carb_g": 11.2,
-    "fat_g": 4.8,
-    "fiber_g": 0.8
+    "kcal": 130,
+    "protein_g": 6,
+    "carb_g": 15,
+    "fat_g": 5,
+    "fiber_g": 1
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
-  "notes": "",
-  "updated_at": "2026-05-18"
+  "notes": "Yoğurtlu, pirinç+un esaslı. Üstte nane yağı. Görsele göre standart kıvam.",
+  "updated_at": "2026-05-19"
 }

@@ -11,16 +11,16 @@
   ],
   "category": "helva",
   "image": "images/foods/tahin-helvasi.png",
-  "portion_g": 40,
+  "portion_g": 45,
   "nutrition": {
-    "kcal": 220,
-    "protein_g": 4,
-    "carb_g": 24,
-    "fat_g": 12,
+    "kcal": 240,
+    "protein_g": 5,
+    "carb_g": 26,
+    "fat_g": 14,
     "fiber_g": 1
   },
   "nutrition_source": "package",
   "is_generic": false,
-  "notes": "Paketli, ~40g porsiyon. Menüde 'HELVA' veya 'TAHİN.H' gibi kısaltmalarla geçebilir.",
-  "updated_at": "2026-05-16"
+  "notes": "\"Şahinoğlu\" tarzı paket helva, ~45g. Paket etiketi değerlerine göre.",
+  "updated_at": "2026-05-19"
 }
