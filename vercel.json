@@ -6,16 +6,21 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/(.*\\.(js|css|html|json))",
+      "source": "/app.js",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" },
-        { "key": "CDN-Cache-Control", "value": "no-store" }
+        { "key": "Cache-Control", "value": "no-store, max-age=0" }
       ]
     },
     {
-      "source": "/(.*\\.(png|jpg|jpeg|webp|svg))",
+      "source": "/admin.js",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        { "key": "Cache-Control", "value": "no-store, max-age=0" }
+      ]
+    },
+    {
+      "source": "/data/current.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, max-age=0" }
       ]
     }
   ]
