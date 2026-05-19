@@ -261,29 +261,86 @@ main().catch(err => {
   }
 })();
 
-// Foto seçilir seçilmez otomatik gönder (tek tık)
+// Foto seçilir seçilmez: küçült + async gönder (sayfa yenilenmez)
 (function () {
   const photoForm = document.getElementById("photo-form");
   if (!photoForm) return;
   const photoInput = photoForm.querySelector('input[type="file"]');
-  const timestampInput = document.getElementById("photo-timestamp");
   const hintEl = document.getElementById("photo-hint");
+  const SUBMIT_URL = "https://formsubmit.co/ajax/240542013@firat.edu.tr";
+  const MAX_DIM = 1600;       // px (en uzun kenar)
+  const JPG_QUALITY = 0.82;
 
-  photoInput?.addEventListener("change", (e) => {
+  function setHint(text, color) {
+    if (!hintEl) return;
+    hintEl.textContent = text;
+    hintEl.style.color = color || "";
+    hintEl.classList.toggle("sending", color === undefined);
+  }
+
+  async function resizeImage(file) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        img.onload = () => {
+          let w = img.width, h = img.height;
+          if (w > MAX_DIM || h > MAX_DIM) {
+            if (w >= h) { h = Math.round((h * MAX_DIM) / w); w = MAX_DIM; }
+            else { w = Math.round((w * MAX_DIM) / h); h = MAX_DIM; }
+          }
+          const canvas = document.createElement("canvas");
+          canvas.width = w; canvas.height = h;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, w, h);
+          canvas.toBlob(
+            (blob) => blob ? resolve(blob) : reject(new Error("canvas boş")),
+            "image/jpeg",
+            JPG_QUALITY
+          );
+        };
+        img.onerror = () => reject(new Error("görsel okunamadı"));
+        img.src = e.target.result;
+      };
+      reader.onerror = () => reject(new Error("dosya okunamadı"));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  photoInput?.addEventListener("change", async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    if (timestampInput) {
-      timestampInput.value = new Date().toLocaleString("tr-TR", {
+
+    try {
+      setHint("Fotoğraf hazırlanıyor…");
+      const blob = await resizeImage(file);
+      const sizeKB = Math.round(blob.size / 1024);
+
+      setHint(`Gönderiliyor… 📤 (${sizeKB} KB)`);
+
+      const fd = new FormData();
+      fd.append("_subject", "📸 Yemekhanem · yemek fotoğrafı paylaşımı");
+      fd.append("_captcha", "false");
+      fd.append("_template", "basic");
+      fd.append("gonderim_zamani", new Date().toLocaleString("tr-TR", {
         dateStyle: "full",
         timeStyle: "short",
         timeZone: "Europe/Istanbul",
+      }));
+      fd.append("fotograf", blob, "yemek.jpg");
+
+      const resp = await fetch(SUBMIT_URL, {
+        method: "POST",
+        body: fd,
+        headers: { "Accept": "application/json" },
       });
+
+      if (!resp.ok) throw new Error(`sunucu ${resp.status}`);
+      setHint("✓ Teşekkürler! Fotoğrafın iletildi 🙌", "#1b6e3a");
+      photoInput.value = "";
+    } catch (err) {
+      console.error("foto gönderim hatası:", err);
+      setHint("⚠️ Gönderilemedi: " + err.message + ". Tekrar dener misin?", "#b00020");
     }
-    if (hintEl) {
-      hintEl.textContent = "Gönderiliyor… 📤";
-      hintEl.classList.add("sending");
-    }
-    // Otomatik submit
-    photoForm.submit();
   });
 })();
