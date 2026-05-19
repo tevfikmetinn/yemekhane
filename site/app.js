@@ -201,17 +201,18 @@ async function main() {
     return;
   }
 
-  // Veri var ama tarih bugünle eşleşmiyor (eski menü)
-  if (ctx.isStale) {
+  // Veri var ama tarih bugünle eşleşmiyor (eski menü) — banner AYRI slot'a
+  const bannerSlot = document.getElementById("banner-slot");
+  if (ctx.isStale && bannerSlot) {
     let msg;
     if (ctx.isWeekend) {
       msg = `📅 Hafta sonu — yemekhane kapalı.<br><small>Aşağıda son hafta içi menüsü görünüyor (<strong>${current.site_date || current.date}</strong>). Pazartesi sabahı yeni menü gelir.</small>`;
     } else {
       msg = `⏳ Bugünün menüsü henüz yayınlanmadı.<br><small>Aşağıda son güncel menü (<strong>${current.site_date || current.date}</strong>). Genelde 09:00 civarı güncellenir.</small>`;
     }
-    root.innerHTML = `<div class="stale-banner">${msg}</div>`;
-  } else {
-    root.innerHTML = "";
+    bannerSlot.innerHTML = `<div class="stale-banner">${msg}</div>`;
+  } else if (bannerSlot) {
+    bannerSlot.innerHTML = "";
   }
 
   const [foods, fullIndex] = await Promise.all([

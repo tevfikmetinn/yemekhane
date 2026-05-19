@@ -57,6 +57,13 @@ main {
 
 .empty small { display: block; margin-top: 6px; opacity: 0.8; }
 
+.banner-slot {
+  max-width: 880px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+}
+.banner-slot:empty { display: none; }
+
 .stale-banner {
   background: #fff7e6;
   border: 1px solid #f1d8a3;
@@ -65,7 +72,6 @@ main {
   font-size: 0.92rem;
   color: #6b4f1a;
   line-height: 1.5;
-  margin-bottom: 6px;
 }
 .stale-banner small { display: block; margin-top: 4px; opacity: 0.85; }
 .stale-banner strong { color: var(--accent); }
