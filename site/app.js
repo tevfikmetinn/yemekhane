@@ -139,18 +139,18 @@ function computeTotals(components, foods) {
 }
 
 function todayISO_TR() {
-  // TR yerel tarihini YYYY-MM-DD formatında al
-  const d = new Date();
-  // UTC+3 ofseti uygula
-  const tr = new Date(d.getTime() + (d.getTimezoneOffset() + 180) * 60000);
-  return tr.toISOString().slice(0, 10);
+  // Her zaman Türkiye saati (UTC+3, DST yok) - tarayıcı saat dilimine bağımsız
+  const trMs = Date.now() + 3 * 3600 * 1000;
+  return new Date(trMs).toISOString().slice(0, 10);
 }
 
 function dayContext(menuDate) {
   // Bugün vs menü tarihi farkı + hafta sonu kontrolü
   const todayStr = todayISO_TR();
-  const today = new Date(todayStr);
-  const dow = today.getDay(); // 0=Pzr, 6=Cmt
+  // UTC parse - getDay() yerel timezone kullanmaması için
+  const [y, m, d] = todayStr.split("-").map(Number);
+  const today = new Date(Date.UTC(y, m - 1, d));
+  const dow = today.getUTCDay(); // 0=Pzr, 6=Cmt
   const isWeekend = dow === 0 || dow === 6;
   const isStale = menuDate && menuDate !== todayStr;
   return { todayStr, isWeekend, isStale, dow };
