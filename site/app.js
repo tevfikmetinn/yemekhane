@@ -261,14 +261,14 @@ main().catch(err => {
   }
 })();
 
-// Foto seçilir seçilmez: küçült + async gönder (sayfa yenilenmez)
+// Foto seçilir seçilmez: küçült + normal form submit (browser native POST)
 (function () {
   const photoForm = document.getElementById("photo-form");
   if (!photoForm) return;
   const photoInput = photoForm.querySelector('input[type="file"]');
+  const timestampInput = document.getElementById("photo-timestamp");
   const hintEl = document.getElementById("photo-hint");
-  const SUBMIT_URL = "https://formsubmit.co/ajax/240542013@firat.edu.tr";
-  const MAX_DIM = 1600;       // px (en uzun kenar)
+  const MAX_DIM = 1600;
   const JPG_QUALITY = 0.82;
 
   function setHint(text, color) {
@@ -312,35 +312,32 @@ main().catch(err => {
     if (!file) return;
 
     try {
-      setHint("Fotoğraf hazırlanıyor…");
+      setHint("Fotoğraf hazırlanıyor… 🔧");
       const blob = await resizeImage(file);
       const sizeKB = Math.round(blob.size / 1024);
 
+      // Resize edilmiş blob'u file input'a inject et (DataTransfer API)
+      const dt = new DataTransfer();
+      const resizedFile = new File([blob], "yemek.jpg", { type: "image/jpeg" });
+      dt.items.add(resizedFile);
+      photoInput.files = dt.files;
+
+      // Timestamp doldur
+      if (timestampInput) {
+        timestampInput.value = new Date().toLocaleString("tr-TR", {
+          dateStyle: "full",
+          timeStyle: "short",
+          timeZone: "Europe/Istanbul",
+        });
+      }
+
       setHint(`Gönderiliyor… 📤 (${sizeKB} KB)`);
 
-      const fd = new FormData();
-      fd.append("_subject", "📸 Yemekhanem · yemek fotoğrafı paylaşımı");
-      fd.append("_captcha", "false");
-      fd.append("_template", "basic");
-      fd.append("gonderim_zamani", new Date().toLocaleString("tr-TR", {
-        dateStyle: "full",
-        timeStyle: "short",
-        timeZone: "Europe/Istanbul",
-      }));
-      fd.append("fotograf", blob, "yemek.jpg");
-
-      const resp = await fetch(SUBMIT_URL, {
-        method: "POST",
-        body: fd,
-        headers: { "Accept": "application/json" },
-      });
-
-      if (!resp.ok) throw new Error(`sunucu ${resp.status}`);
-      setHint("✓ Teşekkürler! Fotoğrafın iletildi 🙌", "#1b6e3a");
-      photoInput.value = "";
+      // Native form submit — sayfa yenilenir, _next URL'e gider
+      photoForm.submit();
     } catch (err) {
-      console.error("foto gönderim hatası:", err);
-      setHint("⚠️ Gönderilemedi: " + err.message + ". Tekrar dener misin?", "#b00020");
+      console.error("foto hazırlama hatası:", err);
+      setHint("⚠️ Hata: " + err.message + ". Tekrar dener misin?", "#b00020");
     }
   });
 })();
