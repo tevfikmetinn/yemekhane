@@ -240,3 +240,50 @@ main().catch(err => {
   document.getElementById("menu-root").innerHTML =
     `<div class="empty">Bir şeyler ters gitti: ${err.message}</div>`;
 });
+
+// URL parametresi ile formsubmit yönlendirme onayı
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get("fb") === "ok") {
+    const hint = document.getElementById("fb-hint");
+    if (hint) {
+      hint.textContent = "✓ Teşekkürler! Mesajın iletildi.";
+      hint.style.color = "#1b6e3a";
+    }
+    setTimeout(() => { history.replaceState({}, "", location.pathname); }, 4000);
+  } else if (params.get("fb") === "foto") {
+    const hint = document.getElementById("photo-hint");
+    if (hint) {
+      hint.textContent = "✓ Teşekkürler! Fotoğrafın iletildi 🙌";
+      hint.style.color = "#1b6e3a";
+    }
+    setTimeout(() => { history.replaceState({}, "", location.pathname); }, 4000);
+  }
+})();
+
+// Foto seçilir seçilmez otomatik gönder (tek tık)
+(function () {
+  const photoForm = document.getElementById("photo-form");
+  if (!photoForm) return;
+  const photoInput = photoForm.querySelector('input[type="file"]');
+  const timestampInput = document.getElementById("photo-timestamp");
+  const hintEl = document.getElementById("photo-hint");
+
+  photoInput?.addEventListener("change", (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (timestampInput) {
+      timestampInput.value = new Date().toLocaleString("tr-TR", {
+        dateStyle: "full",
+        timeStyle: "short",
+        timeZone: "Europe/Istanbul",
+      });
+    }
+    if (hintEl) {
+      hintEl.textContent = "Gönderiliyor… 📤";
+      hintEl.classList.add("sending");
+    }
+    // Otomatik submit
+    photoForm.submit();
+  });
+})();

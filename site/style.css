@@ -234,6 +234,161 @@ main {
   font-size: 0.78rem;
 }
 
+.feedback {
+  max-width: 880px;
+  margin: 8px auto 0;
+  padding: 22px 22px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.feedback h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  color: var(--accent);
+  letter-spacing: 0.3px;
+}
+.feedback-intro {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.feedback-intro strong { color: var(--ink); }
+.feedback-intro em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+/* Foto paylaşım butonu — büyük, tek tık */
+.photo-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, var(--accent), #6d0f2a);
+  color: white;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 4px 14px rgba(138, 21, 56, 0.18);
+  position: relative;
+}
+.photo-btn:hover { filter: brightness(1.07); transform: translateY(-1px); }
+.photo-btn:active { transform: translateY(0); }
+.photo-btn-emoji { font-size: 2.2rem; line-height: 1; }
+.photo-btn-body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.photo-btn-body strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.photo-btn-body small {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+.photo-btn input[type=file] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.photo-hint {
+  margin: 10px 2px 0;
+  font-size: 0.83rem;
+  color: var(--muted);
+  text-align: center;
+}
+.photo-hint.sending { color: var(--accent); font-weight: 500; }
+
+/* Yazılı geri bildirim - açılır panel */
+.text-fb {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.text-fb > summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding: 4px 0;
+  user-select: none;
+  list-style: revert;
+}
+.text-fb > summary:hover { color: var(--accent); }
+.text-fb > form { margin-top: 14px; }
+
+.feedback form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+.feedback form label > span {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.feedback form label > span small {
+  font-weight: 400;
+  opacity: 0.75;
+}
+.feedback form input[type=text],
+.feedback form input[type=email],
+.feedback form input[type=file],
+.feedback form select,
+.feedback form textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafaf6;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.feedback form textarea { resize: vertical; min-height: 80px; }
+.feedback form input[type=file] {
+  padding: 7px 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.fb-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.fb-row label { margin-bottom: 12px; }
+
+.fb-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+.fb-submit {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+.fb-submit:hover { filter: brightness(1.08); }
+.fb-submit:active { transform: translateY(1px); }
+.fb-hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 540px) {
+  .fb-row { grid-template-columns: 1fr; }
+}
+
 footer {
   max-width: 880px;
   margin: 20px auto 60px;
