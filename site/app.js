@@ -183,10 +183,10 @@ async function main() {
     if (pub) {
       const sameDay = pub.slice(0, 10) === (check || "").slice(0, 10);
       publishedLine.innerHTML = sameDay
-        ? `Menü yayınlandı: <strong>${trTime(pub)}</strong> · Son kontrol: ${trTime(check)} · `
-        : `Menü tarihi: <strong>${trDate(pub)}</strong> · Son kontrol: ${trDate(check)} · `;
+        ? `Menü yayınlandı: <strong>${trTime(pub)}</strong> · Son kontrol: ${trTime(check)}`
+        : `Menü tarihi: <strong>${trDate(pub)}</strong> · Son kontrol: ${trDate(check)}`;
     } else if (check) {
-      publishedLine.innerHTML = `Son güncelleme: <strong>${trDate(check)}</strong> · `;
+      publishedLine.innerHTML = `Son güncelleme: <strong>${trDate(check)}</strong>`;
     }
   }
   if (updatedAt) updatedAt.textContent = trDate(current.fetched_at); // legacy fallback

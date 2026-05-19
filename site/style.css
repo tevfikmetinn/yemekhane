@@ -346,48 +346,42 @@ main {
   font-weight: 600;
 }
 
-/* Büyük foto butonu */
+/* Büyük foto butonu — sade outline stili */
 .photo-btn {
   display: flex;
   align-items: center;
   gap: 18px;
   padding: 20px 22px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-  color: white;
+  background: var(--card);
+  color: var(--ink);
+  border: 1.5px solid var(--accent-soft);
   border-radius: var(--radius-md);
   cursor: pointer;
-  box-shadow: var(--shadow-accent);
+  box-shadow: var(--shadow-sm);
   position: relative;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
-  overflow: hidden;
-}
-.photo-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(at top right, rgba(255, 255, 255, 0.12), transparent 50%);
-  pointer-events: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 .photo-btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.06);
-  box-shadow: 0 12px 28px rgba(138, 21, 56, 0.28);
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  box-shadow: var(--shadow-md);
 }
 .photo-btn:active { transform: translateY(0); }
 .photo-btn-emoji {
   font-size: 2.3rem;
   line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
-.photo-btn-body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.photo-btn-body { display: flex; flex-direction: column; gap: 3px; flex: 1; }
 .photo-btn-body strong {
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  color: var(--accent);
 }
 .photo-btn-body small {
   font-size: 0.82rem;
-  opacity: 0.86;
+  color: var(--muted);
   font-weight: 500;
 }
 .photo-btn input[type=file] {
