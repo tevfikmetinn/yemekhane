@@ -241,30 +241,4 @@ main().catch(err => {
     `<div class="empty">Bir şeyler ters gitti: ${err.message}</div>`;
 });
 
-// URL parametresi ile formsubmit yönlendirme onayı
-(function () {
-  const params = new URLSearchParams(location.search);
-  if (params.get("fb") === "ok") {
-    const hint = document.getElementById("fb-hint");
-    if (hint) {
-      hint.textContent = "✓ Teşekkürler! Mesajın iletildi.";
-      hint.style.color = "#1b6e3a";
-    }
-    setTimeout(() => { history.replaceState({}, "", location.pathname); }, 4000);
-  }
-})();
-
-// Karakter sayacı
-(function () {
-  const ta = document.getElementById("fb-mesaj");
-  const count = document.getElementById("fb-count");
-  if (!ta || !count) return;
-  const MAX = 100;
-  const update = () => {
-    const n = ta.value.length;
-    count.textContent = `${n} / ${MAX}`;
-    count.classList.toggle("warn", n >= MAX - 10);
-  };
-  ta.addEventListener("input", update);
-  update();
-})();
+// Geri bildirim formu kaldırıldı — yarın Telegram bot ile birleştirilecek.
