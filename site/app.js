@@ -232,7 +232,44 @@ async function main() {
     document.getElementById("t-carb").textContent = fmt(totals.carb_g);
     document.getElementById("t-fat").textContent = fmt(totals.fat_g);
     totalsBox.hidden = false;
+    renderMacroDonut(totals);
   }
+}
+
+function renderMacroDonut(totals) {
+  // Kalori bazlı yüzde: karb 4 kcal/g, protein 4 kcal/g, yağ 9 kcal/g
+  const carbKcal    = (+totals.carb_g    || 0) * 4;
+  const proteinKcal = (+totals.protein_g || 0) * 4;
+  const fatKcal     = (+totals.fat_g     || 0) * 9;
+  const macroSum = carbKcal + proteinKcal + fatKcal;
+  if (macroSum <= 0) return;
+
+  const carbPct    = (carbKcal    / macroSum) * 100;
+  const proteinPct = (proteinKcal / macroSum) * 100;
+  const fatPct     = 100 - carbPct - proteinPct;
+
+  const donut = document.getElementById("macro-donut");
+  if (donut) {
+    donut.style.setProperty("--carb-end", `${carbPct}%`);
+    donut.style.setProperty("--protein-end", `${carbPct + proteinPct}%`);
+  }
+
+  const macroKcal = document.getElementById("macro-kcal");
+  if (macroKcal) macroKcal.textContent = fmt(totals.kcal);
+
+  const r = (n) => `%${Math.round(n)}`;
+  const g = (n) => `${Math.round(+n || 0)} g`;
+
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  };
+  set("legend-carb-pct",    r(carbPct));
+  set("legend-carb-g",      g(totals.carb_g));
+  set("legend-protein-pct", r(proteinPct));
+  set("legend-protein-g",   g(totals.protein_g));
+  set("legend-fat-pct",     r(fatPct));
+  set("legend-fat-g",       g(totals.fat_g));
 }
 
 main().catch(err => {
