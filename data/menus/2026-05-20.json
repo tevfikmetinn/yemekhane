@@ -2,12 +2,13 @@
   "status": "ok",
   "date": "2026-05-20",
   "site_date": "20 Mayıs 2026 Çarşamba",
-  "fetched_at": "2026-05-20T10:50:36.275890+03:00",
+  "fetched_at": "2026-05-20T11:19:25.739590+03:00",
   "components": [
     {
       "raw": "KARNI YARIK",
-      "food_id": null,
-      "needs_review": true
+      "food_id": "karniyarik",
+      "score": 1.0,
+      "auto": true
     },
     {
       "raw": "PİRİNÇ PİLAVI",
@@ -24,14 +25,11 @@
     {
       "raw": "T.HELVA",
       "food_id": "tahin-helvasi",
-      "score": 0.778,
-      "auto": false,
-      "needs_review": true
+      "score": 1.0,
+      "auto": true
     }
   ],
-  "unknown_count": 1,
-  "unknowns": [
-    "KARNI YARIK"
-  ],
-  "menu_published_at": "2026-05-20T10:50:36.275890+03:00"
+  "unknown_count": 0,
+  "unknowns": [],
+  "menu_published_at": "2026-05-20T11:19:25.739590+03:00"
 }
