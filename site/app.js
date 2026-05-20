@@ -280,11 +280,10 @@ function renderMacroDonut(totals) {
 }
 
 function setupMacroDetail(data) {
-  // Yetişkin (2000 kcal/gün) tahmini günlük ihtiyaç:
   const META = {
-    carb:    { name: "Karbonhidrat", rda: 300 },
-    protein: { name: "Protein",      rda: 50  },
-    fat:     { name: "Yağ",          rda: 65  },
+    carb:    { name: "Karbonhidrat" },
+    protein: { name: "Protein"      },
+    fat:     { name: "Yağ"          },
   };
 
   const detail = document.getElementById("macro-detail");
@@ -300,7 +299,6 @@ function setupMacroDetail(data) {
     document.getElementById("md-pct").textContent = `%${Math.round(v.pct)}`;
     document.getElementById("md-g").textContent = `${Math.round(v.g)} g`;
     document.getElementById("md-kcal").textContent = `${Math.round(v.kcal)} kcal`;
-    document.getElementById("md-rda").textContent = `~%${Math.round((v.g / meta.rda) * 100)}`;
   }
 
   // Default: en büyük dilim
