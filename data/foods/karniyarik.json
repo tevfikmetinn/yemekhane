@@ -1,0 +1,25 @@
+{
+  "id": "karniyarik",
+  "name": "Karnıyarık",
+  "aliases": [
+    "karniyarik",
+    "karnıyarık",
+    "karnı yarık",
+    "karni yarik",
+    "kıymalı patlıcan"
+  ],
+  "category": "ana-yemek",
+  "image": "images/foods/karniyarik.png",
+  "portion_g": 230,
+  "nutrition": {
+    "kcal": 320,
+    "protein_g": 16,
+    "carb_g": 18,
+    "fat_g": 22,
+    "fiber_g": 5
+  },
+  "nutrition_source": "ai_estimate",
+  "is_generic": false,
+  "notes": "Patlıcan içi kıyma + soğan + sarımsak + biber, fırınlanmış. Genelde 1-2 parça verilir.",
+  "updated_at": "2026-05-20"
+}
