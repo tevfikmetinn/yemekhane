@@ -3,5 +3,9 @@
   functions = "netlify/functions"
   command = "echo 'no build needed - functions only'"
 
+# Scheduled function — explicit cron syntax (her 15dk, hafta içi, TR 08:00-17:59)
+[functions."scrape-trigger"]
+  schedule = "*/15 5-14 * * 1-5"
+
 # Vercel ana siteyi serve ediyor. Netlify burada SADECE scheduled function'ı çalıştırır.
 # Function GitHub Actions'a workflow_dispatch çağrısı atar, scraper orada çalışır.
