@@ -1,3 +1,7 @@
 [build]
-  command = "mkdir -p _site && cp -r site/* _site/ && cp -r data _site/data && cp -r images _site/images && for f in _site/*.js; do sed -i 's|\\.\\./data|./data|g; s|\\.\\./images|./images|g' \"$f\"; done"
-  publish = "_site"
+  publish = "."
+  functions = "netlify/functions"
+  command = "echo 'no build needed - functions only'"
+
+# Vercel ana siteyi serve ediyor. Netlify burada SADECE scheduled function'ı çalıştırır.
+# Function GitHub Actions'a workflow_dispatch çağrısı atar, scraper orada çalışır.
