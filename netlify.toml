@@ -2,8 +2,14 @@
   publish = "."
   functions = "netlify/functions"
   command = "echo 'no build needed - functions only'"
+  # KRITIK: sadece netlify/ veya netlify.toml değiştiyse build et.
+  # Bot menü güncellemesi yaptığında (data/* değişir) build SKİP edilir.
+  # Bu sayede aylık deploy 30+ → 1-2'ye düşer, credit dramatik azalır.
+  # Exit 0 = skip, Exit 1 = build (`git diff --quiet` mantığı).
+  ignore = "git diff --quiet HEAD^ HEAD -- netlify/ netlify.toml"
 
-# Scheduled function — explicit cron syntax (her 15dk, hafta içi, TR 08:00-17:59)
+# Scheduled function — her 15 dk, hafta içi, TR 08:00-17:59 (UTC 5-14)
+# Function invocations çok az credit harcar, 15 dk güvenli.
 [functions."scrape-trigger"]
   schedule = "*/15 5-14 * * 1-5"
 
