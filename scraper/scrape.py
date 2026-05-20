@@ -203,14 +203,20 @@ def save(result: dict) -> bool:
         return False
 
     # Eski current.json ile karşılaştır: menü değişti mi?
+    # (raw + food_id + status üçlüsüne bak — sadece raw'a bakmak yetersizdi,
+    #  çünkü bileşen kütüphanesi güncellense bile aynı raw text "değişmemiş" sayılıyordu)
+    def _comp_sig(c):
+        status = "unknown" if not c.get("food_id") else ("matched" if c.get("auto") else "suggest")
+        return (c.get("raw", ""), c.get("food_id") or "", status)
+
     menu_changed = True
     old_published_at = None
     if CURRENT_FILE.exists():
         try:
             old = json.loads(CURRENT_FILE.read_text(encoding="utf-8"))
-            old_items = sorted(c.get("raw", "") for c in old.get("components", []))
-            new_items = sorted(c.get("raw", "") for c in result.get("components", []))
-            if old_items == new_items and old.get("date") == result.get("date"):
+            old_sigs = sorted(_comp_sig(c) for c in old.get("components", []))
+            new_sigs = sorted(_comp_sig(c) for c in result.get("components", []))
+            if old_sigs == new_sigs and old.get("date") == result.get("date"):
                 menu_changed = False
                 old_published_at = old.get("menu_published_at")
         except (json.JSONDecodeError, OSError):
