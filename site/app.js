@@ -270,6 +270,91 @@ function renderMacroDonut(totals) {
   set("legend-protein-g",   g(totals.protein_g));
   set("legend-fat-pct",     r(fatPct));
   set("legend-fat-g",       g(totals.fat_g));
+
+  // Interaktif detay paneli — hover/tap ile değişen bilgilendirme
+  setupMacroDetail({
+    carb:    { pct: carbPct,    g: +totals.carb_g    || 0, kcal: carbKcal    },
+    protein: { pct: proteinPct, g: +totals.protein_g || 0, kcal: proteinKcal },
+    fat:     { pct: fatPct,     g: +totals.fat_g     || 0, kcal: fatKcal     },
+  });
+}
+
+function setupMacroDetail(data) {
+  // Yetişkin (2000 kcal/gün) tahmini günlük ihtiyaç:
+  const META = {
+    carb: {
+      name: "Karbonhidrat",
+      rda: 300,
+      desc: "Vücudun ana enerji kaynağı. Beyin ve kaslar öncelikle glikoz kullanır; düşük olursa halsizlik, yüksek olursa enerji fazlası yağa dönüşür.",
+    },
+    protein: {
+      name: "Protein",
+      rda: 50,
+      desc: "Kas, doku, enzim ve hormon yapımı için temel. Doygunluğu uzun tutar, kas onarımına katkıda bulunur.",
+    },
+    fat: {
+      name: "Yağ",
+      rda: 65,
+      desc: "Yağda eriyen vitaminlerin (A, D, E, K) emilimi için gerekli. Hücre zarı yapımı ve enerji deposu görevi görür.",
+    },
+  };
+
+  const detail = document.getElementById("macro-detail");
+  if (!detail) return;
+
+  function render(key) {
+    const meta = META[key];
+    const v = data[key];
+    if (!meta || !v) return;
+
+    detail.dataset.active = key;
+    document.getElementById("md-name").textContent = meta.name;
+    document.getElementById("md-pct").textContent = `%${Math.round(v.pct)}`;
+    document.getElementById("md-desc").textContent = meta.desc;
+    document.getElementById("md-g").textContent = `${Math.round(v.g)} g`;
+    document.getElementById("md-kcal").textContent = `${Math.round(v.kcal)} kcal`;
+    document.getElementById("md-rda").textContent = `~%${Math.round((v.g / meta.rda) * 100)}`;
+  }
+
+  // Default: en büyük dilim
+  const biggest = Object.entries(data).reduce((a, b) => b[1].pct > a[1].pct ? b : a)[0];
+  render(biggest);
+
+  // Legend row hover + tap
+  const keys = ["carb", "protein", "fat"];
+  document.querySelectorAll(".macro-row").forEach((row, i) => {
+    const key = keys[i];
+    row.addEventListener("mouseenter", () => render(key));
+    row.addEventListener("click", () => render(key));
+  });
+
+  // Donut tıklama — mouse pozisyonu ile dilim algılama
+  const donut = document.getElementById("macro-donut");
+  if (donut) {
+    const handleDonut = (e) => {
+      const rect = donut.getBoundingClientRect();
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const px = (e.clientX ?? e.touches?.[0]?.clientX) - rect.left - cx;
+      const py = (e.clientY ?? e.touches?.[0]?.clientY) - rect.top - cy;
+
+      // atan2: -π..π, 0 sağ yatay. Conic 'from -90deg' (saat 9) saat yönü.
+      // Saat 9'dan saat yönü → 0°=sol, 90°=alt, 180°=sağ, 270°=üst.
+      let angle = Math.atan2(py, px) * 180 / Math.PI; // -180..180, 0 sağ
+      angle = (angle + 180) % 360; // 0 = sol, saat yönünde
+
+      const carbEnd = data.carb.pct * 3.6;
+      const proteinEnd = carbEnd + data.protein.pct * 3.6;
+
+      let key;
+      if (angle < carbEnd) key = "carb";
+      else if (angle < proteinEnd) key = "protein";
+      else key = "fat";
+      render(key);
+    };
+    donut.addEventListener("click", handleDonut);
+    donut.addEventListener("mousemove", handleDonut);
+  }
 }
 
 main().catch(err => {
