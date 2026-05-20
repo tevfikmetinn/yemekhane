@@ -63,77 +63,35 @@
   </section>
 
   <section class="feedback" id="feedback">
-    <h2>Bize Yardım Et 🙌</h2>
+    <h2>Geri Bildirim 💬</h2>
     <p class="feedback-intro">
-      O gün yediğin yemeğin <strong>üstten çekilmiş</strong> bir fotoğrafını paylaşırsan,
-      eksik bileşenlerin görseline katkıda bulunmuş olursun. Mesaj yok, form yok — tek tık.
+      Bir öneri, eleştiri veya not bırakmak istersen aşağıya yaz. Hesap yok, isim yok, e-posta yok.
     </p>
 
-    <form id="photo-form"
+    <form id="feedback-form"
           action="https://formsubmit.co/240542013@firat.edu.tr"
-          method="POST"
-          enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="📸 Yemekhanem · yemek fotoğrafı paylaşımı">
+          method="POST">
+      <input type="hidden" name="_subject" value="Yemekhanem · yeni geri bildirim">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="basic">
-      <input type="hidden" name="_next" value="https://yemekhanem.vercel.app/?fb=foto">
-      <input type="hidden" name="gonderim_zamani" id="photo-timestamp">
+      <input type="hidden" name="_next" value="https://yemekhanem.vercel.app/?fb=ok">
 
-      <label class="photo-btn">
-        <span class="photo-btn-emoji">📸</span>
-        <span class="photo-btn-body">
-          <strong>Yemek fotoğrafı yolla</strong>
-          <small>Kamera açılır veya galeri görünür · otomatik gönderilir</small>
-        </span>
-        <input type="file" name="fotograf" accept="image/*" capture="environment" required>
-      </label>
-      <p class="photo-hint" id="photo-hint">Tepsiyi üstten, ışıklı bir yerde çekersen en iyisi olur.</p>
+      <div class="msg-wrap">
+        <textarea
+          name="mesaj"
+          id="fb-mesaj"
+          required
+          rows="2"
+          maxlength="100"
+          placeholder="Mesajını buraya yaz (en fazla 100 karakter)…"></textarea>
+        <span class="char-count" id="fb-count">0 / 100</span>
+      </div>
+
+      <div class="fb-actions">
+        <button type="submit" class="fb-submit">Gönder</button>
+        <span class="fb-hint" id="fb-hint"></span>
+      </div>
     </form>
-
-    <details class="text-fb">
-      <summary>Yazılı geri bildirim / öneri yapmak için tıkla</summary>
-      <form id="feedback-form"
-            action="https://formsubmit.co/240542013@firat.edu.tr"
-            method="POST">
-        <input type="hidden" name="_subject" value="Yemekhanem · yazılı geri bildirim">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://yemekhanem.vercel.app/?fb=ok">
-
-        <div class="fb-row">
-          <label>
-            <span>Kategori</span>
-            <select name="kategori" required>
-              <option value="oneri">Öneri</option>
-              <option value="elestiri">Eleştiri</option>
-              <option value="hata">Hata bildirimi</option>
-              <option value="tesekkur">Teşekkür</option>
-              <option value="diger">Diğer</option>
-            </select>
-          </label>
-          <label>
-            <span>İsim <small>(opsiyonel)</small></span>
-            <input type="text" name="isim" maxlength="60">
-          </label>
-        </div>
-
-        <label>
-          <span>Mesajın</span>
-          <textarea name="mesaj" required rows="4" maxlength="1500"
-                    placeholder="Site nasıl daha iyi olur, neyi eksik buldun..."></textarea>
-        </label>
-
-        <label>
-          <span>E-posta <small>(cevap istiyorsan, opsiyonel)</small></span>
-          <input type="email" name="email" placeholder="ornek@mail.com">
-        </label>
-
-        <div class="fb-actions">
-          <button type="submit" class="fb-submit">Gönder</button>
-          <span class="fb-hint" id="fb-hint"></span>
-        </div>
-      </form>
-    </details>
   </section>
 
   <footer>

@@ -251,93 +251,20 @@ main().catch(err => {
       hint.style.color = "#1b6e3a";
     }
     setTimeout(() => { history.replaceState({}, "", location.pathname); }, 4000);
-  } else if (params.get("fb") === "foto") {
-    const hint = document.getElementById("photo-hint");
-    if (hint) {
-      hint.textContent = "✓ Teşekkürler! Fotoğrafın iletildi 🙌";
-      hint.style.color = "#1b6e3a";
-    }
-    setTimeout(() => { history.replaceState({}, "", location.pathname); }, 4000);
   }
 })();
 
-// Foto seçilir seçilmez: küçült + normal form submit (browser native POST)
+// Karakter sayacı
 (function () {
-  const photoForm = document.getElementById("photo-form");
-  if (!photoForm) return;
-  const photoInput = photoForm.querySelector('input[type="file"]');
-  const timestampInput = document.getElementById("photo-timestamp");
-  const hintEl = document.getElementById("photo-hint");
-  const MAX_DIM = 1600;
-  const JPG_QUALITY = 0.82;
-
-  function setHint(text, color) {
-    if (!hintEl) return;
-    hintEl.textContent = text;
-    hintEl.style.color = color || "";
-    hintEl.classList.toggle("sending", color === undefined);
-  }
-
-  async function resizeImage(file) {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        img.onload = () => {
-          let w = img.width, h = img.height;
-          if (w > MAX_DIM || h > MAX_DIM) {
-            if (w >= h) { h = Math.round((h * MAX_DIM) / w); w = MAX_DIM; }
-            else { w = Math.round((w * MAX_DIM) / h); h = MAX_DIM; }
-          }
-          const canvas = document.createElement("canvas");
-          canvas.width = w; canvas.height = h;
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0, w, h);
-          canvas.toBlob(
-            (blob) => blob ? resolve(blob) : reject(new Error("canvas boş")),
-            "image/jpeg",
-            JPG_QUALITY
-          );
-        };
-        img.onerror = () => reject(new Error("görsel okunamadı"));
-        img.src = e.target.result;
-      };
-      reader.onerror = () => reject(new Error("dosya okunamadı"));
-      reader.readAsDataURL(file);
-    });
-  }
-
-  photoInput?.addEventListener("change", async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    try {
-      setHint("Fotoğraf hazırlanıyor… 🔧");
-      const blob = await resizeImage(file);
-      const sizeKB = Math.round(blob.size / 1024);
-
-      // Resize edilmiş blob'u file input'a inject et (DataTransfer API)
-      const dt = new DataTransfer();
-      const resizedFile = new File([blob], "yemek.jpg", { type: "image/jpeg" });
-      dt.items.add(resizedFile);
-      photoInput.files = dt.files;
-
-      // Timestamp doldur
-      if (timestampInput) {
-        timestampInput.value = new Date().toLocaleString("tr-TR", {
-          dateStyle: "full",
-          timeStyle: "short",
-          timeZone: "Europe/Istanbul",
-        });
-      }
-
-      setHint(`Gönderiliyor… 📤 (${sizeKB} KB)`);
-
-      // Native form submit — sayfa yenilenir, _next URL'e gider
-      photoForm.submit();
-    } catch (err) {
-      console.error("foto hazırlama hatası:", err);
-      setHint("⚠️ Hata: " + err.message + ". Tekrar dener misin?", "#b00020");
-    }
-  });
+  const ta = document.getElementById("fb-mesaj");
+  const count = document.getElementById("fb-count");
+  if (!ta || !count) return;
+  const MAX = 100;
+  const update = () => {
+    const n = ta.value.length;
+    count.textContent = `${n} / ${MAX}`;
+    count.classList.toggle("warn", n >= MAX - 10);
+  };
+  ta.addEventListener("input", update);
+  update();
 })();
