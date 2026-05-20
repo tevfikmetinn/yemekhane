@@ -24,9 +24,13 @@
   --radius-lg: 16px;
 
   /* Makro besin renkleri (donut + legend) */
-  --macro-carb: #d4a017;
-  --macro-protein: #8a1538;
-  --macro-fat: #c97f3e;
+  --macro-carb: #a87959;       /* sıcak kahve — ekmek/pilav tonu */
+  --macro-protein: #e54848;    /* coral red — etin rengi */
+  --macro-fat: #f0b41f;        /* altın sarı — yağ/butter tonu */
+
+  --macro-carb-soft: #d9c4b3;
+  --macro-protein-soft: #fcd5d5;
+  --macro-fat-soft: #fbe6a6;
 }
 
 * { box-sizing: border-box; }
@@ -291,81 +295,108 @@ main {
 .macro-chart {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 20px;
-  padding-bottom: 18px;
+  gap: 28px;
+  margin-bottom: 22px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--border-soft);
 }
 
+/* Dış yumuşak halka (resmi siteye selam) */
 .macro-donut {
-  width: 134px;
-  height: 134px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   flex-shrink: 0;
+  padding: 4px;
+  background:
+    linear-gradient(var(--accent-soft), var(--accent-soft)) padding-box,
+    linear-gradient(135deg, var(--accent-soft), transparent) border-box;
+  position: relative;
+  box-shadow:
+    0 6px 20px rgba(31, 24, 20, 0.07),
+    0 1px 3px rgba(31, 24, 20, 0.05);
+}
+
+/* Asıl renkli donut */
+.macro-donut::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
   background: conic-gradient(
     var(--macro-carb) 0 var(--carb-end, 0%),
     var(--macro-protein) var(--carb-end, 0%) var(--protein-end, 0%),
     var(--macro-fat) var(--protein-end, 0%) 100%
   );
-  position: relative;
   transition: background 0.6s ease;
-  box-shadow: 0 4px 14px rgba(31, 24, 20, 0.08);
 }
 
+/* İç beyaz daire (merkez metin için) */
 .macro-donut::before {
   content: "";
   position: absolute;
-  inset: 20px;
+  inset: 22px;
   background: var(--card);
   border-radius: 50%;
+  z-index: 1;
+  box-shadow: inset 0 1px 2px rgba(31, 24, 20, 0.04);
 }
 
 .macro-donut-inner {
   position: absolute;
-  inset: 20px;
+  inset: 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 2;
 }
 
 .macro-kcal-value {
-  font-size: 1.55rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
   letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .macro-kcal-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--muted);
-  margin-top: 3px;
-  letter-spacing: 0.04em;
+  margin-top: 4px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .macro-legend {
   flex: 1;
   display: grid;
-  gap: 10px;
+  gap: 4px;
 }
 
 .macro-row {
   display: grid;
-  grid-template-columns: 12px 1fr auto auto;
+  grid-template-columns: 14px 1fr auto auto;
   align-items: center;
-  gap: 10px;
-  font-size: 0.92rem;
+  gap: 12px;
+  font-size: 0.93rem;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+
+.macro-row:hover {
+  background: var(--bg-soft);
 }
 
 .macro-dot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(31, 24, 20, 0.12);
 }
 
 .dot-carb    { background: var(--macro-carb); }
@@ -375,6 +406,7 @@ main {
 .macro-name {
   color: var(--ink-soft);
   font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .macro-pct {
@@ -382,33 +414,69 @@ main {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
+  font-size: 0.98rem;
 }
 
 .macro-g {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.83rem;
   font-variant-numeric: tabular-nums;
-  min-width: 44px;
+  min-width: 48px;
   text-align: right;
+  font-weight: 500;
+}
+
+/* Kalori bazlı yüzde bilgilendirme notu */
+.macro-note {
+  margin: -8px 0 18px;
+  padding: 0 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+.macro-note strong {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.macro-note-icon {
+  display: inline-block;
+  margin-right: 5px;
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+  vertical-align: middle;
+  font-size: 0.92rem;
 }
 
 /* Mobil: donut üst, legend alt */
 @media (max-width: 540px) {
   .macro-chart {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     align-items: center;
+    padding-bottom: 16px;
   }
   .macro-donut {
-    width: 150px;
-    height: 150px;
+    width: 168px;
+    height: 168px;
   }
-  .macro-donut::before { inset: 22px; }
-  .macro-donut-inner { inset: 22px; }
-  .macro-kcal-value { font-size: 1.75rem; }
+  .macro-donut::before { inset: 26px; }
+  .macro-donut-inner { inset: 26px; }
+  .macro-kcal-value { font-size: 2rem; }
+  .macro-kcal-label { font-size: 0.74rem; }
   .macro-legend {
     width: 100%;
-    max-width: 280px;
+    max-width: 320px;
+  }
+  .macro-row {
+    padding: 10px 12px;
+  }
+  .macro-note {
+    margin: 4px 0 16px;
+    font-size: 0.75rem;
+    line-height: 1.6;
   }
 }
 
