@@ -282,21 +282,9 @@ function renderMacroDonut(totals) {
 function setupMacroDetail(data) {
   // Yetişkin (2000 kcal/gün) tahmini günlük ihtiyaç:
   const META = {
-    carb: {
-      name: "Karbonhidrat",
-      rda: 300,
-      desc: "Vücudun ana enerji kaynağı. Beyin ve kaslar öncelikle glikoz kullanır; düşük olursa halsizlik, yüksek olursa enerji fazlası yağa dönüşür.",
-    },
-    protein: {
-      name: "Protein",
-      rda: 50,
-      desc: "Kas, doku, enzim ve hormon yapımı için temel. Doygunluğu uzun tutar, kas onarımına katkıda bulunur.",
-    },
-    fat: {
-      name: "Yağ",
-      rda: 65,
-      desc: "Yağda eriyen vitaminlerin (A, D, E, K) emilimi için gerekli. Hücre zarı yapımı ve enerji deposu görevi görür.",
-    },
+    carb:    { name: "Karbonhidrat", rda: 300 },
+    protein: { name: "Protein",      rda: 50  },
+    fat:     { name: "Yağ",          rda: 65  },
   };
 
   const detail = document.getElementById("macro-detail");
@@ -310,7 +298,6 @@ function setupMacroDetail(data) {
     detail.dataset.active = key;
     document.getElementById("md-name").textContent = meta.name;
     document.getElementById("md-pct").textContent = `%${Math.round(v.pct)}`;
-    document.getElementById("md-desc").textContent = meta.desc;
     document.getElementById("md-g").textContent = `${Math.round(v.g)} g`;
     document.getElementById("md-kcal").textContent = `${Math.round(v.kcal)} kcal`;
     document.getElementById("md-rda").textContent = `~%${Math.round((v.g / meta.rda) * 100)}`;
