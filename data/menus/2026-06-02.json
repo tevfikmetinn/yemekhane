@@ -2,12 +2,13 @@
   "status": "ok",
   "date": "2026-06-02",
   "site_date": "02 Haziran 2026 Salı",
-  "fetched_at": "2026-06-02T09:02:30.783425+03:00",
+  "fetched_at": "2026-06-02T17:42:44.330352+03:00",
   "components": [
     {
       "raw": "TAS KEBAP",
-      "food_id": null,
-      "needs_review": true
+      "food_id": "tas-kebap",
+      "score": 1.0,
+      "auto": true
     },
     {
       "raw": "BULGUR PİLAVI",
@@ -28,9 +29,7 @@
       "auto": true
     }
   ],
-  "unknown_count": 1,
-  "unknowns": [
-    "TAS KEBAP"
-  ],
-  "menu_published_at": "2026-06-02T09:02:30.783425+03:00"
+  "unknown_count": 0,
+  "unknowns": [],
+  "menu_published_at": "2026-06-02T17:42:44.330352+03:00"
 }

@@ -150,6 +150,12 @@
     "is_generic": false
   },
   {
+    "id": "tas-kebap",
+    "name": "Tas Kebap",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
     "id": "tatli",
     "name": "Tatlı",
     "category": "tatli",
