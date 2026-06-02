@@ -9,16 +9,16 @@
   ],
   "category": "pilav",
   "image": "images/foods/bulgur-pilavi.png",
-  "portion_g": 200,
+  "portion_g": 160,
   "nutrition": {
-    "kcal": 220,
+    "kcal": 250,
     "protein_g": 6,
     "carb_g": 42,
-    "fat_g": 3,
+    "fat_g": 5,
     "fiber_g": 4
   },
   "nutrition_source": "ai_estimate",
   "is_generic": false,
   "notes": "",
-  "updated_at": "2026-05-16"
+  "updated_at": "2026-06-02"
 }
