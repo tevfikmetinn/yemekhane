@@ -84,6 +84,12 @@
     "is_generic": false
   },
   {
+    "id": "izmir-kofte",
+    "name": "İzmir Köfte",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
     "id": "karniyarik",
     "name": "Karnıyarık",
     "category": "ana-yemek",
