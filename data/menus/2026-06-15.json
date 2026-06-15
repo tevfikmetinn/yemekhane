@@ -2,7 +2,7 @@
   "status": "ok",
   "date": "2026-06-15",
   "site_date": "15 Haziran 2026 Pazartesi",
-  "fetched_at": "2026-06-15T09:08:37.436615+03:00",
+  "fetched_at": "2026-06-15T13:32:33.219198+03:00",
   "components": [
     {
       "raw": "TAZE FASULYE",
@@ -10,9 +10,9 @@
       "needs_review": true
     },
     {
-      "raw": "PİRİÇ PİLAVI",
+      "raw": "PİRİNÇ PİLAVI",
       "food_id": "pirinc-pilavi",
-      "score": 0.96,
+      "score": 1.0,
       "auto": true
     },
     {
@@ -32,5 +32,5 @@
   "unknowns": [
     "TAZE FASULYE"
   ],
-  "menu_published_at": "2026-06-15T09:08:37.436615+03:00"
+  "menu_published_at": "2026-06-15T13:32:33.219198+03:00"
 }
