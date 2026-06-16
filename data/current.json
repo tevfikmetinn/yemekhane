@@ -2,13 +2,11 @@
   "status": "ok",
   "date": "2026-06-16",
   "site_date": "16 Haziran 2026 Salı",
-  "fetched_at": "2026-06-16T08:34:41.129912+03:00",
+  "fetched_at": "2026-06-16T08:46:53.511868+03:00",
   "components": [
     {
-      "raw": "ORMAN KEBABI",
-      "food_id": "tas-kebap",
-      "score": 0.727,
-      "auto": false,
+      "raw": "SEBZELİ KEBABI",
+      "food_id": null,
       "needs_review": true
     },
     {
@@ -23,15 +21,16 @@
       "needs_review": true
     },
     {
-      "raw": "YOĞURT",
-      "food_id": "yogurt",
+      "raw": "AYRAN",
+      "food_id": "ayran",
       "score": 1.0,
       "auto": true
     }
   ],
-  "unknown_count": 1,
+  "unknown_count": 2,
   "unknowns": [
+    "SEBZELİ KEBABI",
     "AŞURE"
   ],
-  "menu_published_at": "2026-06-16T08:34:41.129912+03:00"
+  "menu_published_at": "2026-06-16T08:46:53.511868+03:00"
 }
