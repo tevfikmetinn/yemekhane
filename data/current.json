@@ -2,7 +2,7 @@
   "status": "ok",
   "date": "2026-06-17",
   "site_date": "17 Haziran 2026 Çarşamba",
-  "fetched_at": "2026-06-17T08:45:42.884087+03:00",
+  "fetched_at": "2026-06-17T12:02:57.173782+03:00",
   "components": [
     {
       "raw": "FIRNDA TAVUK",
@@ -17,9 +17,9 @@
       "auto": true
     },
     {
-      "raw": "DÖĞME ÇORBA",
-      "food_id": "dovme-corbasi",
-      "score": 0.909,
+      "raw": "ŞEHRİYE ÇORBASI",
+      "food_id": "sehriye-corbasi",
+      "score": 1.0,
       "auto": true
     },
     {
@@ -31,5 +31,5 @@
   ],
   "unknown_count": 0,
   "unknowns": [],
-  "menu_published_at": "2026-06-17T08:45:42.884087+03:00"
+  "menu_published_at": "2026-06-17T12:02:57.173782+03:00"
 }
