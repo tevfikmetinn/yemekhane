@@ -2,7 +2,7 @@
   "status": "ok",
   "date": "2026-06-18",
   "site_date": "18 Haziran 2026 Perşembe",
-  "fetched_at": "2026-06-18T08:46:01.882520+03:00",
+  "fetched_at": "2026-06-18T09:03:07.673482+03:00",
   "components": [
     {
       "raw": "YOĞURTLU TERBİYELİ KÖFTE",
@@ -10,8 +10,8 @@
       "needs_review": true
     },
     {
-      "raw": "BULGUR PİLAVI",
-      "food_id": "bulgur-pilavi",
+      "raw": "PİRİNÇ PİLAVI",
+      "food_id": "pirinc-pilavi",
       "score": 1.0,
       "auto": true
     },
@@ -32,5 +32,5 @@
   "unknowns": [
     "YOĞURTLU TERBİYELİ KÖFTE"
   ],
-  "menu_published_at": "2026-06-18T08:46:01.882520+03:00"
+  "menu_published_at": "2026-06-18T09:03:07.673482+03:00"
 }
