@@ -2,7 +2,7 @@
   "status": "ok",
   "date": "2026-06-24",
   "site_date": "24 Haziran 2026 Çarşamba",
-  "fetched_at": "2026-06-24T09:09:17.189409+03:00",
+  "fetched_at": "2026-06-24T11:34:56.115773+03:00",
   "components": [
     {
       "raw": "DOMATES KEBAP",
@@ -24,13 +24,13 @@
       "auto": true
     },
     {
-      "raw": "YOĞURT",
-      "food_id": "yogurt",
+      "raw": "AYRAN",
+      "food_id": "ayran",
       "score": 1.0,
       "auto": true
     }
   ],
   "unknown_count": 0,
   "unknowns": [],
-  "menu_published_at": "2026-06-24T09:09:17.189409+03:00"
+  "menu_published_at": "2026-06-24T11:34:56.115773+03:00"
 }
