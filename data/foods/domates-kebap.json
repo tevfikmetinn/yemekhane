@@ -1,0 +1,24 @@
+
+  {
+    "id": "domates-kebap",
+    "name": "Domates Kebap",
+    "aliases": [
+      "Domates kebap",
+      "Domates kebabi",
+      "domates kebabı"
+    ],
+    "category": "ana-yemek",
+    "image": "images/foods/domates-kebap.png",
+    "portion_g": 230,
+    "nutrition": {
+      "kcal": 320,
+      "protein_g": 23,
+      "carb_g": 15,
+      "fat_g": 18,
+      "fiber_g": 3
+    },
+    "nutrition_source": "ai_estimate",
+    "is_generic": false,
+    "notes": "",
+    "updated_at": "2026-06-26"
+  }
