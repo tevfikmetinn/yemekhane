@@ -30,6 +30,12 @@
     "is_generic": false
   },
   {
+    "id": "domates-kebap",
+    "name": "Domates Kebap",
+    "category": "ana-yemek",
+    "is_generic": false
+  },
+  {
     "id": "dovme-corbasi",
     "name": "Dövme Çorbası",
     "category": "corba",
