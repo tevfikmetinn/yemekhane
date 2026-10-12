@@ -1,0 +1,35 @@
+{
+  "status": "ok",
+  "date": "2026-10-12",
+  "site_date": "12 Ekim 2026 Pazartesi",
+  "fetched_at": "2026-10-12T08:30:17.347523+03:00",
+  "components": [
+    {
+      "raw": "ETLİ NOHUT",
+      "food_id": "etli-nohut",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "BULGUR PİLAVI",
+      "food_id": "bulgur-pilavi",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "YOĞURT",
+      "food_id": "yogurt",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "MEYVE",
+      "food_id": "meyve",
+      "score": 1.0,
+      "auto": true
+    }
+  ],
+  "unknown_count": 0,
+  "unknowns": [],
+  "menu_published_at": "2026-10-12T08:30:17.347523+03:00"
+}
