@@ -1,36 +1,37 @@
 {
   "status": "ok",
-  "date": "2026-10-13",
-  "site_date": "13 Ekim 2026 Salı",
-  "fetched_at": "2026-10-13T09:15:14.567721+03:00",
+  "date": "2026-10-14",
+  "site_date": "14 Ekim 2026 Çarşamba",
+  "fetched_at": "2026-10-14T09:15:14.997655+03:00",
   "components": [
     {
-      "raw": "KARNIBAHAR",
-      "food_id": "karniyarik",
-      "score": 0.7,
+      "raw": "TAVUK KAVURMA",
+      "food_id": "tavuk-kizartma",
+      "score": 0.815,
       "auto": false,
       "needs_review": true
     },
     {
-      "raw": "MAKARNA",
-      "food_id": "peynirli-makarna",
+      "raw": "PİRİNÇ PİLAVI",
+      "food_id": "pirinc-pilavi",
       "score": 1.0,
       "auto": true
     },
     {
-      "raw": "EZOGELİN ÇORBA",
-      "food_id": "ezogelin-corbasi",
-      "score": 1.0,
-      "auto": true
+      "raw": "T.SUYU ÇORBA",
+      "food_id": "tavuk-suyu-corbasi",
+      "score": 0.857,
+      "auto": false,
+      "needs_review": true
     },
     {
-      "raw": "MEYVE",
-      "food_id": "meyve",
+      "raw": "TATLI",
+      "food_id": "tatli",
       "score": 1.0,
       "auto": true
     }
   ],
   "unknown_count": 0,
   "unknowns": [],
-  "menu_published_at": "2026-10-13T09:15:14.567721+03:00"
+  "menu_published_at": "2026-10-14T09:15:14.997655+03:00"
 }
