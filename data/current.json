@@ -1,37 +1,36 @@
 {
   "status": "ok",
-  "date": "2026-10-14",
-  "site_date": "14 Ekim 2026 Çarşamba",
-  "fetched_at": "2026-10-14T09:15:14.997655+03:00",
+  "date": "2026-10-15",
+  "site_date": "15 Ekim 2026 Perşembe",
+  "fetched_at": "2026-10-15T09:30:17.394181+03:00",
   "components": [
     {
-      "raw": "TAVUK KAVURMA",
-      "food_id": "tavuk-kizartma",
-      "score": 0.815,
-      "auto": false,
+      "raw": "ADANA KÖFTE",
+      "food_id": null,
       "needs_review": true
     },
     {
-      "raw": "PİRİNÇ PİLAVI",
-      "food_id": "pirinc-pilavi",
+      "raw": "BULGUR PİLAVI",
+      "food_id": "bulgur-pilavi",
       "score": 1.0,
       "auto": true
     },
     {
-      "raw": "T.SUYU ÇORBA",
-      "food_id": "tavuk-suyu-corbasi",
-      "score": 0.857,
-      "auto": false,
-      "needs_review": true
+      "raw": "DOMATES ÇORBA",
+      "food_id": "domates-corbasi",
+      "score": 1.0,
+      "auto": true
     },
     {
-      "raw": "TATLI",
-      "food_id": "tatli",
+      "raw": "AYRAN",
+      "food_id": "ayran",
       "score": 1.0,
       "auto": true
     }
   ],
-  "unknown_count": 0,
-  "unknowns": [],
-  "menu_published_at": "2026-10-14T09:15:14.997655+03:00"
+  "unknown_count": 1,
+  "unknowns": [
+    "ADANA KÖFTE"
+  ],
+  "menu_published_at": "2026-10-15T09:30:17.394181+03:00"
 }

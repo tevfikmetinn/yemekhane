@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "date": "2026-10-15",
+  "site_date": "15 Ekim 2026 Perşembe",
+  "fetched_at": "2026-10-15T09:30:17.394181+03:00",
+  "components": [
+    {
+      "raw": "ADANA KÖFTE",
+      "food_id": null,
+      "needs_review": true
+    },
+    {
+      "raw": "BULGUR PİLAVI",
+      "food_id": "bulgur-pilavi",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "DOMATES ÇORBA",
+      "food_id": "domates-corbasi",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "AYRAN",
+      "food_id": "ayran",
+      "score": 1.0,
+      "auto": true
+    }
+  ],
+  "unknown_count": 1,
+  "unknowns": [
+    "ADANA KÖFTE"
+  ],
+  "menu_published_at": "2026-10-15T09:30:17.394181+03:00"
+}
