@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "date": "2026-10-16",
+  "site_date": "16 Ekim 2026 Cuma",
+  "fetched_at": "2026-10-16T08:45:11.180939+03:00",
+  "components": [
+    {
+      "raw": "BİBER DOLMASI",
+      "food_id": null,
+      "needs_review": true
+    },
+    {
+      "raw": "M.ÇORBA",
+      "food_id": "dovme-corbasi",
+      "score": 0.778,
+      "auto": false,
+      "needs_review": true
+    },
+    {
+      "raw": "İRMİK HELVASI",
+      "food_id": "irmik-helvasi",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "YOĞURT",
+      "food_id": "yogurt",
+      "score": 1.0,
+      "auto": true
+    }
+  ],
+  "unknown_count": 1,
+  "unknowns": [
+    "BİBER DOLMASI"
+  ],
+  "menu_published_at": "2026-10-16T08:45:11.180939+03:00"
+}
