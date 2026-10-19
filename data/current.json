@@ -1,37 +1,24 @@
 {
   "status": "ok",
-  "date": "2026-10-16",
-  "site_date": "16 Ekim 2026 Cuma",
-  "fetched_at": "2026-10-16T08:45:11.180939+03:00",
+  "date": "2026-10-19",
+  "site_date": "19 Ekim 2026, Pazartesi Bugün",
+  "fetched_at": "2026-10-19T08:00:18.259403+03:00",
   "components": [
     {
-      "raw": "BİBER DOLMASI",
+      "raw": "Haftalık Menü",
       "food_id": null,
       "needs_review": true
     },
     {
-      "raw": "M.ÇORBA",
-      "food_id": "dovme-corbasi",
-      "score": 0.778,
-      "auto": false,
+      "raw": "Bu gün için menü eklenmemiş",
+      "food_id": null,
       "needs_review": true
-    },
-    {
-      "raw": "İRMİK HELVASI",
-      "food_id": "irmik-helvasi",
-      "score": 1.0,
-      "auto": true
-    },
-    {
-      "raw": "YOĞURT",
-      "food_id": "yogurt",
-      "score": 1.0,
-      "auto": true
     }
   ],
-  "unknown_count": 1,
+  "unknown_count": 2,
   "unknowns": [
-    "BİBER DOLMASI"
+    "Haftalık Menü",
+    "Bu gün için menü eklenmemiş"
   ],
-  "menu_published_at": "2026-10-16T08:45:11.180939+03:00"
+  "menu_published_at": "2026-10-19T08:00:18.259403+03:00"
 }
