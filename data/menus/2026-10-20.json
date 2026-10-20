@@ -1,0 +1,109 @@
+{
+  "status": "ok",
+  "date": "2026-10-20",
+  "site_date": "19 Ekim 2026, Pazartesi",
+  "fetched_at": "2026-10-20T08:00:25.228385+03:00",
+  "components": [
+    {
+      "raw": "ETLİ TAZE FASULYE",
+      "food_id": null,
+      "needs_review": true
+    },
+    {
+      "raw": "PİRİNÇ PİLAVI",
+      "food_id": "pirinc-pilavi",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "MERCİMEK ÇORBA",
+      "food_id": "mercimek-corbasi",
+      "score": 0.933,
+      "auto": true
+    },
+    {
+      "raw": "YOĞURT",
+      "food_id": "yogurt",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "ORMAN KEBAP",
+      "food_id": "domates-kebap",
+      "score": 0.75,
+      "auto": false,
+      "needs_review": true
+    },
+    {
+      "raw": "BULGUR PİLAVI",
+      "food_id": "bulgur-pilavi",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "YAYLA ÇORBA",
+      "food_id": "yayla-corbasi",
+      "score": 0.917,
+      "auto": true
+    },
+    {
+      "raw": "MEYVE",
+      "food_id": "meyve",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "ROSTO KÖFTE",
+      "food_id": null,
+      "needs_review": true
+    },
+    {
+      "raw": "MAKARNA",
+      "food_id": "peynirli-makarna",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "DOMATES ÇORBA",
+      "food_id": "domates-corbasi",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "TATLI",
+      "food_id": "tatli",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "FIRINDA TAVUK",
+      "food_id": "firin-tavuk",
+      "score": 1.0,
+      "auto": true
+    },
+    {
+      "raw": "ETLİ KURU FASULYE",
+      "food_id": null,
+      "needs_review": true
+    },
+    {
+      "raw": "MEVSİM SALATA",
+      "food_id": "mevsim-salatasi",
+      "score": 0.929,
+      "auto": true
+    },
+    {
+      "raw": "T.HELVA",
+      "food_id": "tahin-helvasi",
+      "score": 1.0,
+      "auto": true
+    }
+  ],
+  "unknown_count": 3,
+  "unknowns": [
+    "ETLİ TAZE FASULYE",
+    "ROSTO KÖFTE",
+    "ETLİ KURU FASULYE"
+  ],
+  "menu_published_at": "2026-10-20T08:00:25.228385+03:00"
+}
