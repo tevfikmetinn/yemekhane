@@ -1,8 +1,8 @@
 {
   "status": "ok",
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "site_date": "19 Ekim 2026, Pazartesi",
-  "fetched_at": "2026-10-20T08:00:25.228385+03:00",
+  "fetched_at": "2026-10-21T09:00:15.269711+03:00",
   "components": [
     {
       "raw": "ETLİ TAZE FASULYE",
@@ -105,5 +105,5 @@
     "ROSTO KÖFTE",
     "ETLİ KURU FASULYE"
   ],
-  "menu_published_at": "2026-10-20T08:00:25.228385+03:00"
+  "menu_published_at": "2026-10-21T09:00:15.269711+03:00"
 }
