@@ -1,8 +1,8 @@
 {
   "status": "ok",
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "site_date": null,
-  "fetched_at": "2026-11-25T11:45:26.499413+03:00",
+  "fetched_at": "2026-11-26T08:00:40.497526+03:00",
   "components": [
     {
       "raw": "Haftalık Menü",
@@ -14,5 +14,5 @@
   "unknowns": [
     "Haftalık Menü"
   ],
-  "menu_published_at": "2026-11-25T11:45:26.499413+03:00"
+  "menu_published_at": "2026-11-26T08:00:40.497526+03:00"
 }
