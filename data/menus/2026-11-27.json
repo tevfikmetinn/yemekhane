@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "date": "2026-11-27",
+  "site_date": null,
+  "fetched_at": "2026-11-27T08:00:45.380125+03:00",
+  "components": [
+    {
+      "raw": "Haftalık Menü",
+      "food_id": null,
+      "needs_review": true
+    }
+  ],
+  "unknown_count": 1,
+  "unknowns": [
+    "Haftalık Menü"
+  ],
+  "menu_published_at": "2026-11-27T08:00:45.380125+03:00"
+}
